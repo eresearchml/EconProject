@@ -1,0 +1,31 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\EconProject\Untitled.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}15 Apr 2017, 10:14:04
+
+{com}. reg ne nd
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}     144
+{txt}{hline 13}{char +}{hline 30}           F(  1,   142) ={res} 1381.14
+    {txt}   Model {char |} {res} 59709.9118     1  59709.9118           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} 6138.99715   142  43.2323743           {txt}R-squared     = {res} 0.9068
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9061
+    {txt}   Total {char |} {res}  65848.909   143  460.481881           {txt}Root MSE      = {res} 6.5751
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          ne{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 10}nd {c |}{col 14}{res}{space 2} 2.561491{col 26}{space 2} .0689246{col 37}{space 1}   37.16{col 46}{space 3}0.000{col 54}{space 4}  2.42524{col 67}{space 3} 2.697742
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-1.086884{col 26}{space 2} .6428086{col 37}{space 1}   -1.69{col 46}{space 3}0.093{col 54}{space 4}-2.357595{col 67}{space 3} .1838274
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\EconProject\Untitled.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}15 Apr 2017, 10:15:24
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

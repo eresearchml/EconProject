@@ -1,0 +1,1286 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\EconProject\Log1.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}15 Apr 2017, 10:15:37
+
+{com}. reg year r
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}     141
+{txt}{hline 13}{char +}{hline 30}           F(  1,   139) ={res}    0.65
+    {txt}   Model {char |} {res}  1079.2205     1   1079.2205           {txt}Prob > F      = {res} 0.4232
+    {txt}Residual {char |} {res} 232510.779   139  1672.73942           {txt}R-squared     = {res} 0.0046
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res}-0.0025
+    {txt}   Total {char |} {res}     233590   140      1668.5           {txt}Root MSE      = {res} 40.899
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}        year{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 11}r {c |}{col 14}{res}{space 2} .9937528{col 26}{space 2} 1.237193{col 37}{space 1}    0.80{col 46}{space 3}0.423{col 54}{space 4}-1.452397{col 67}{space 3} 3.439903
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 1936.314{col 26}{space 2} 6.774405{col 37}{space 1}  285.83{col 46}{space 3}0.000{col 54}{space 4}  1922.92{col 67}{space 3} 1949.709
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. exit, clear
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\EconProject\Log1.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}15 Apr 2017, 10:16:19
+
+{com}. import delimited C:\EconProject\testdata1.csv, clear 
+{res}{text}(5 vars, 5 obs)
+
+{com}. reg mortrate waveyear smokerate saveave incave
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}       5
+{txt}{hline 13}{char +}{hline 30}           F(  4,     0) ={res}       .
+    {txt}   Model {char |} {res} .000335822     4  .000083955           {txt}Prob > F      = {res}      .
+    {txt}Residual {char |} {res}          0     0           .           {txt}R-squared     = {res} 1.0000
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res}      .
+    {txt}   Total {char |} {res} .000335822     4  .000083955           {txt}Root MSE      = {res}      0
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}waveyear {c |}{col 14}{res}{space 2}-.2057198{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 3}smokerate {c |}{col 14}{res}{space 2} 30.03605{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 5}saveave {c |}{col 14}{res}{space 2} .0000314{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 6}incave {c |}{col 14}{res}{space 2} .0000211{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 408.5785{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. twoway (scatter mortrate waveyear)
+{res}
+{com}. biplot mortrate
+{err}too few variables specified
+{txt}{search r(102):r(102);}
+
+{com}. biplot mortrate waveyear smokerate saveave incave
+{res}
+{txt}Biplot of {res:5} observations and {res:5} variables
+
+    Explained variance by component 1 {res} 0.9972
+{txt}    Explained variance by component 2 {res} 0.0028
+{txt}             Total explained variance {res} 1.0000
+
+{com}. reg mortrate waveyear smokerate
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}       5
+{txt}{hline 13}{char +}{hline 30}           F(  2,     2) ={res}    1.80
+    {txt}   Model {char |} {res} .000215709     2  .000107855           {txt}Prob > F      = {res} 0.3577
+    {txt}Residual {char |} {res} .000120113     2  .000060056           {txt}R-squared     = {res} 0.6423
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.2847
+    {txt}   Total {char |} {res} .000335822     4  .000083955           {txt}Root MSE      = {res} .00775
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 4}waveyear {c |}{col 14}{res}{space 2} .0035193{col 26}{space 2} .0020534{col 37}{space 1}    1.71{col 46}{space 3}0.229{col 54}{space 4}-.0053159{col 67}{space 3} .0123545
+{txt}{space 3}smokerate {c |}{col 14}{res}{space 2} -.890442{col 26}{space 2} .9976703{col 37}{space 1}   -0.89{col 46}{space 3}0.466{col 54}{space 4}-5.183071{col 67}{space 3} 3.402187
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-6.993477{col 26}{space 2} 4.071491{col 37}{space 1}   -1.72{col 46}{space 3}0.228{col 54}{space 4}-24.51169{col 67}{space 3} 10.52474
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. import delimited C:\EconProject\file1_short.csv, clear 
+{res}{text}(7 vars, 10 obs)
+
+{com}. twoway (scatter mortrate waveyear)
+{err}variable waveyear not found
+{txt}{search r(111):r(111);}
+
+{com}. twoway (scatter mortrate waveyear) (scatter wave mortrate)
+{err}variable waveyear not found
+{txt}{search r(111):r(111);}
+
+{com}. twoway (scatter mortrate waveyear) (scatter wave mortrate)
+{err}variable waveyear not found
+{txt}{search r(111):r(111);}
+
+{com}. twoway (scatter wave mortrate)
+{res}
+{com}. import delimited C:\EconProject\file1_short.csv, clear 
+{res}{text}(7 vars, 10 obs)
+
+{com}. twoway (scatter wave mortrate)
+{res}
+{com}. twoway (scatter wave mortrate) (scatter mortrate smokerate)
+{res}
+{com}. twoway (scatter mortrate smokerate)
+{res}
+{com}. import excel "C:\EconProject\TestFE1.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. xi: regress quantity price i.city i.year
+{err}variable city not found
+{txt}{search r(111):r(111);}
+
+{com}. import excel "C:\EconProject\TestFE1.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. xi: regress quantity price i.location i.year
+{txt}i.location{col 19}_Ilocation_1-4{col 39}(_Ilocation_1 for loc~n==Chicago omitted)
+i.year{col 19}_Iyear_2003-2004{col 39}(naturally coded; _Iyear_2003 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}       8
+{txt}{hline 13}{char +}{hline 30}           F(  5,     2) ={res} 1983.58
+    {txt}   Model {char |} {res} 1.52844178     5  .305688356           {txt}Prob > F      = {res} 0.0005
+    {txt}Residual {char |} {res} .000308219     2   .00015411           {txt}R-squared     = {res} 0.9998
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9993
+    {txt}   Total {char |} {res}    1.52875     7  .218392857           {txt}Root MSE      = {res} .01241
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    quantity{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 7}price {c |}{col 14}{res}{space 2}-.0253425{col 26}{space 2} .0020548{col 37}{space 1}  -12.33{col 46}{space 3}0.007{col 54}{space 4}-.0341835{col 67}{space 3}-.0165014
+{txt}_Ilocation_2 {c |}{col 14}{res}{space 2}-1.720205{col 26}{space 2} .0478705{col 37}{space 1}  -35.93{col 46}{space 3}0.001{col 54}{space 4}-1.926176{col 67}{space 3}-1.514235
+{txt}_Ilocation_3 {c |}{col 14}{res}{space 2}-.8934932{col 26}{space 2} .0380415{col 37}{space 1}  -23.49{col 46}{space 3}0.002{col 54}{space 4}-1.057172{col 67}{space 3} -.729814
+{txt}_Ilocation_4 {c |}{col 14}{res}{space 2}-1.635616{col 26}{space 2}  .064897{col 37}{space 1}  -25.20{col 46}{space 3}0.002{col 54}{space 4}-1.914846{col 67}{space 3}-1.356387
+{txt}{space 1}_Iyear_2004 {c |}{col 14}{res}{space 2} .0390411{col 26}{space 2} .0127497{col 37}{space 1}    3.06{col 46}{space 3}0.092{col 54}{space 4}-.0158163{col 67}{space 3} .0938985
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 3.907877{col 26}{space 2} .1600614{col 37}{space 1}   24.41{col 46}{space 3}0.002{col 54}{space 4} 3.219188{col 67}{space 3} 4.596565
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. import excel "C:\EconProject\TestFE2.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. xi: regress mortrate smokerate i.sex i.wave
+{txt}i.sex{col 19}_Isex_1-2{col 39}(naturally coded; _Isex_1 omitted)
+i.wave{col 19}_Iwave_1-5{col 39}(naturally coded; _Iwave_1 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      10
+{txt}{hline 13}{char +}{hline 30}           F(  6,     3) ={res}  121.92
+    {txt}   Model {char |} {res} .000686681     6  .000114447           {txt}Prob > F      = {res} 0.0011
+    {txt}Residual {char |} {res} 2.8162e-06     3  9.3873e-07           {txt}R-squared     = {res} 0.9959
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9877
+    {txt}   Total {char |} {res} .000689497     9  .000076611           {txt}Root MSE      = {res} .00097
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2}-.0346148{col 26}{space 2} .1253976{col 37}{space 1}   -0.28{col 46}{space 3}0.800{col 54}{space 4} -.433686{col 67}{space 3} .3644564
+{txt}{space 5}_Isex_2 {c |}{col 14}{res}{space 2}-.0014496{col 26}{space 2} .0015537{col 37}{space 1}   -0.93{col 46}{space 3}0.420{col 54}{space 4}-.0063942{col 67}{space 3}  .003495
+{txt}{space 4}_Iwave_2 {c |}{col 14}{res}{space 2} .0114572{col 26}{space 2} .0009692{col 37}{space 1}   11.82{col 46}{space 3}0.001{col 54}{space 4} .0083728{col 67}{space 3} .0145415
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0246915{col 26}{space 2} .0010251{col 37}{space 1}   24.09{col 46}{space 3}0.000{col 54}{space 4} .0214292{col 67}{space 3} .0279537
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2}  .018155{col 26}{space 2}  .001006{col 37}{space 1}   18.05{col 46}{space 3}0.000{col 54}{space 4} .0149537{col 67}{space 3} .0213564
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0178427{col 26}{space 2}  .002183{col 37}{space 1}    8.17{col 46}{space 3}0.004{col 54}{space 4} .0108955{col 67}{space 3}   .02479
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0027438{col 26}{space 2}  .008063{col 37}{space 1}    0.34{col 46}{space 3}0.756{col 54}{space 4}-.0229162{col 67}{space 3} .0284038
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. xi: regress mortrate savave i.sex i.wave
+{txt}i.sex{col 19}_Isex_1-2{col 39}(naturally coded; _Isex_1 omitted)
+i.wave{col 19}_Iwave_1-5{col 39}(naturally coded; _Iwave_1 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      10
+{txt}{hline 13}{char +}{hline 30}           F(  6,     3) ={res}  118.91
+    {txt}   Model {char |} {res}  .00068661     6  .000114435           {txt}Prob > F      = {res} 0.0012
+    {txt}Residual {char |} {res} 2.8870e-06     3  9.6233e-07           {txt}R-squared     = {res} 0.9958
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9874
+    {txt}   Total {char |} {res} .000689497     9  .000076611           {txt}Root MSE      = {res} .00098
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}savave {c |}{col 14}{res}{space 2}-7.87e-09{col 26}{space 2} 2.85e-07{col 37}{space 1}   -0.03{col 46}{space 3}0.980{col 54}{space 4}-9.16e-07{col 67}{space 3} 9.00e-07
+{txt}{space 5}_Isex_2 {c |}{col 14}{res}{space 2}-.0010962{col 26}{space 2}  .001602{col 37}{space 1}   -0.68{col 46}{space 3}0.543{col 54}{space 4}-.0061943{col 67}{space 3}  .004002
+{txt}{space 4}_Iwave_2 {c |}{col 14}{res}{space 2} .0115112{col 26}{space 2} .0019805{col 37}{space 1}    5.81{col 46}{space 3}0.010{col 54}{space 4} .0052085{col 67}{space 3} .0178139
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0246877{col 26}{space 2} .0033624{col 37}{space 1}    7.34{col 46}{space 3}0.005{col 54}{space 4} .0139871{col 67}{space 3} .0353884
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0182322{col 26}{space 2} .0055929{col 37}{space 1}    3.26{col 46}{space 3}0.047{col 54}{space 4} .0004329{col 67}{space 3} .0360314
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0174513{col 26}{space 2} .0054757{col 37}{space 1}    3.19{col 46}{space 3}0.050{col 54}{space 4} .0000252{col 67}{space 3} .0348773
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0007231{col 26}{space 2} .0071259{col 37}{space 1}    0.10{col 46}{space 3}0.926{col 54}{space 4}-.0219548{col 67}{space 3} .0234009
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. xi: regress mortrate incomeave i.sex i.wave
+{txt}i.sex{col 19}_Isex_1-2{col 39}(naturally coded; _Isex_1 omitted)
+i.wave{col 19}_Iwave_1-5{col 39}(naturally coded; _Iwave_1 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      10
+{txt}{hline 13}{char +}{hline 30}           F(  6,     3) ={res}  119.24
+    {txt}   Model {char |} {res} .000686618     6  .000114436           {txt}Prob > F      = {res} 0.0012
+    {txt}Residual {char |} {res} 2.8792e-06     3  9.5972e-07           {txt}R-squared     = {res} 0.9958
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9875
+    {txt}   Total {char |} {res} .000689497     9  .000076611           {txt}Root MSE      = {res} .00098
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}incomeave {c |}{col 14}{res}{space 2}-1.63e-08{col 26}{space 2} 1.72e-07{col 37}{space 1}   -0.09{col 46}{space 3}0.931{col 54}{space 4}-5.65e-07{col 67}{space 3} 5.32e-07
+{txt}{space 5}_Isex_2 {c |}{col 14}{res}{space 2}-.0012286{col 26}{space 2} .0019378{col 37}{space 1}   -0.63{col 46}{space 3}0.571{col 54}{space 4}-.0073955{col 67}{space 3} .0049383
+{txt}{space 4}_Iwave_2 {c |}{col 14}{res}{space 2} .0116549{col 26}{space 2} .0022513{col 37}{space 1}    5.18{col 46}{space 3}0.014{col 54}{space 4} .0044903{col 67}{space 3} .0188196
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0249226{col 26}{space 2} .0035672{col 37}{space 1}    6.99{col 46}{space 3}0.006{col 54}{space 4} .0135701{col 67}{space 3} .0362751
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0185534{col 26}{space 2} .0051102{col 37}{space 1}    3.63{col 46}{space 3}0.036{col 54}{space 4} .0022905{col 67}{space 3} .0348162
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0177858{col 26}{space 2} .0052142{col 37}{space 1}    3.41{col 46}{space 3}0.042{col 54}{space 4} .0011918{col 67}{space 3} .0343798
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0014124{col 26}{space 2} .0094105{col 37}{space 1}    0.15{col 46}{space 3}0.890{col 54}{space 4}-.0285361{col 67}{space 3} .0313609
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. regress mortrate smokerate
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      10
+{txt}{hline 13}{char +}{hline 30}           F(  1,     8) ={res}    0.65
+    {txt}   Model {char |} {res} .000051788     1  .000051788           {txt}Prob > F      = {res} 0.4435
+    {txt}Residual {char |} {res} .000637709     8  .000079714           {txt}R-squared     = {res} 0.0751
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res}-0.0405
+    {txt}   Total {char |} {res} .000689497     9  .000076611           {txt}Root MSE      = {res} .00893
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} .2662888{col 26}{space 2} .3303727{col 37}{space 1}    0.81{col 46}{space 3}0.444{col 54}{space 4}-.4955521{col 67}{space 3}  1.02813
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0023205{col 26}{space 2} .0207994{col 37}{space 1}   -0.11{col 46}{space 3}0.914{col 54}{space 4}-.0502839{col 67}{space 3}  .045643
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. regress mortrate savave
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      10
+{txt}{hline 13}{char +}{hline 30}           F(  1,     8) ={res}    8.37
+    {txt}   Model {char |} {res} .000352448     1  .000352448           {txt}Prob > F      = {res} 0.0201
+    {txt}Residual {char |} {res} .000337049     8  .000042131           {txt}R-squared     = {res} 0.5112
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.4501
+    {txt}   Total {char |} {res} .000689497     9  .000076611           {txt}Root MSE      = {res} .00649
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}savave {c |}{col 14}{res}{space 2} 7.47e-07{col 26}{space 2} 2.58e-07{col 37}{space 1}    2.89{col 46}{space 3}0.020{col 54}{space 4} 1.51e-07{col 67}{space 3} 1.34e-06
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0106046{col 26}{space 2} .0088482{col 37}{space 1}   -1.20{col 46}{space 3}0.265{col 54}{space 4}-.0310087{col 67}{space 3} .0097994
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. regress mortrate incomeave
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      10
+{txt}{hline 13}{char +}{hline 30}           F(  1,     8) ={res}    9.76
+    {txt}   Model {char |} {res} .000378876     1  .000378876           {txt}Prob > F      = {res} 0.0141
+    {txt}Residual {char |} {res} .000310621     8  .000038828           {txt}R-squared     = {res} 0.5495
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.4932
+    {txt}   Total {char |} {res} .000689497     9  .000076611           {txt}Root MSE      = {res} .00623
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}incomeave {c |}{col 14}{res}{space 2} 4.91e-07{col 26}{space 2} 1.57e-07{col 37}{space 1}    3.12{col 46}{space 3}0.014{col 54}{space 4} 1.29e-07{col 67}{space 3} 8.54e-07
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0187195{col 26}{space 2} .0107491{col 37}{space 1}   -1.74{col 46}{space 3}0.120{col 54}{space 4}-.0435071{col 67}{space 3}  .006068
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. xi: regress mortrate smokerate savave incomeave i.sex i.wave
+{txt}i.sex{col 19}_Isex_1-2{col 39}(naturally coded; _Isex_1 omitted)
+i.wave{col 19}_Iwave_1-5{col 39}(naturally coded; _Iwave_1 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      10
+{txt}{hline 13}{char +}{hline 30}           F(  8,     1) ={res}   37.73
+    {txt}   Model {char |} {res} .000687221     8  .000085903           {txt}Prob > F      = {res} 0.1253
+    {txt}Residual {char |} {res} 2.2765e-06     1  2.2765e-06           {txt}R-squared     = {res} 0.9967
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9703
+    {txt}   Total {char |} {res} .000689497     9  .000076611           {txt}Root MSE      = {res} .00151
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} .0251793{col 26}{space 2} .3371143{col 37}{space 1}    0.07{col 46}{space 3}0.953{col 54}{space 4}-4.258264{col 67}{space 3} 4.308623
+{txt}{space 6}savave {c |}{col 14}{res}{space 2} 2.87e-06{col 26}{space 2} 6.03e-06{col 37}{space 1}    0.48{col 46}{space 3}0.717{col 54}{space 4}-.0000738{col 67}{space 3} .0000795
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2}-1.77e-06{col 26}{space 2} 3.83e-06{col 37}{space 1}   -0.46{col 46}{space 3}0.724{col 54}{space 4}-.0000504{col 67}{space 3} .0000469
+{txt}{space 5}_Isex_2 {c |}{col 14}{res}{space 2}-.0047816{col 26}{space 2} .0079687{col 37}{space 1}   -0.60{col 46}{space 3}0.656{col 54}{space 4}-.1060342{col 67}{space 3} .0964709
+{txt}{space 4}_Iwave_2 {c |}{col 14}{res}{space 2} .0149942{col 26}{space 2} .0097743{col 37}{space 1}    1.53{col 46}{space 3}0.368{col 54}{space 4}-.1091997{col 67}{space 3}  .139188
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0274332{col 26}{space 2} .0104546{col 37}{space 1}    2.62{col 46}{space 3}0.232{col 54}{space 4}-.1054051{col 67}{space 3} .1602715
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0141856{col 26}{space 2} .0126048{col 37}{space 1}    1.13{col 46}{space 3}0.462{col 54}{space 4}-.1459736{col 67}{space 3} .1743449
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0153569{col 26}{space 2} .0096503{col 37}{space 1}    1.59{col 46}{space 3}0.357{col 54}{space 4}-.1072613{col 67}{space 3}  .137975
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0240412{col 26}{space 2} .0487307{col 37}{space 1}    0.49{col 46}{space 3}0.708{col 54}{space 4} -.595141{col 67}{space 3} .6432234
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. regress mortrate smokerate savave incomeave
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      10
+{txt}{hline 13}{char +}{hline 30}           F(  3,     6) ={res}    6.21
+    {txt}   Model {char |} {res} .000521501     3  .000173834           {txt}Prob > F      = {res} 0.0286
+    {txt}Residual {char |} {res} .000167996     6  .000027999           {txt}R-squared     = {res} 0.7564
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.6345
+    {txt}   Total {char |} {res} .000689497     9  .000076611           {txt}Root MSE      = {res} .00529
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2}-.6562056{col 26}{space 2} .3017035{col 37}{space 1}   -2.18{col 46}{space 3}0.073{col 54}{space 4}-1.394448{col 67}{space 3} .0820363
+{txt}{space 6}savave {c |}{col 14}{res}{space 2}-2.18e-06{col 26}{space 2} 1.54e-06{col 37}{space 1}   -1.41{col 46}{space 3}0.207{col 54}{space 4}-5.95e-06{col 67}{space 3} 1.59e-06
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2} 2.17e-06{col 26}{space 2} 1.04e-06{col 37}{space 1}    2.09{col 46}{space 3}0.082{col 54}{space 4}-3.74e-07{col 67}{space 3} 4.72e-06
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0182788{col 26}{space 2} .0158908{col 37}{space 1}   -1.15{col 46}{space 3}0.294{col 54}{space 4}-.0571622{col 67}{space 3} .0206045
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. import excel "C:\EconProject\TestFE2.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. regress mortrate smokerate savave incomeave
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}       8
+{txt}{hline 13}{char +}{hline 30}           F(  3,     4) ={res}    0.44
+    {txt}   Model {char |} {res} .000044538     3  .000014846           {txt}Prob > F      = {res} 0.7361
+    {txt}Residual {char |} {res} .000134507     4  .000033627           {txt}R-squared     = {res} 0.2488
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res}-0.3147
+    {txt}   Total {char |} {res} .000179045     7  .000025578           {txt}Root MSE      = {res}  .0058
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2}-.3599349{col 26}{space 2} .4562019{col 37}{space 1}   -0.79{col 46}{space 3}0.474{col 54}{space 4}-1.626554{col 67}{space 3} .9066845
+{txt}{space 6}savave {c |}{col 14}{res}{space 2}-1.36e-06{col 26}{space 2} 2.02e-06{col 37}{space 1}   -0.67{col 46}{space 3}0.537{col 54}{space 4}-6.96e-06{col 67}{space 3} 4.24e-06
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2} 1.33e-06{col 26}{space 2} 1.55e-06{col 37}{space 1}    0.85{col 46}{space 3}0.441{col 54}{space 4}-2.98e-06{col 67}{space 3} 5.63e-06
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0052372{col 26}{space 2} .0244398{col 37}{space 1}   -0.21{col 46}{space 3}0.841{col 54}{space 4} -.073093{col 67}{space 3} .0626186
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. xi: regress mortrate smokerate savave incomeave i.sex i.wave
+{txt}i.sex{col 19}_Isex_1-2{col 39}(naturally coded; _Isex_1 omitted)
+i.wave{col 19}_Iwave_2-5{col 39}(naturally coded; _Iwave_2 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}       8
+{txt}{hline 13}{char +}{hline 30}           F(  7,     0) ={res}       .
+    {txt}   Model {char |} {res} .000179045     7  .000025578           {txt}Prob > F      = {res}      .
+    {txt}Residual {char |} {res}          0     0           .           {txt}R-squared     = {res} 1.0000
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res}      .
+    {txt}   Total {char |} {res} .000179045     7  .000025578           {txt}Root MSE      = {res}      0
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} .1209155{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 6}savave {c |}{col 14}{res}{space 2} 5.52e-06{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2}-3.68e-06{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 5}_Isex_2 {c |}{col 14}{res}{space 2}-.0109691{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0138186{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2}-.0030898{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2}-.0009234{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0778566{col 26}{space 2}        .{col 37}{space 1}       .{col 46}{space 3}    .{col 54}{space 4}        .{col 67}{space 3}        .
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. import excel "C:\EconProject\TestFE2.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. xi: regress mortrate smokerate savave incomeave i.sex i.wave
+{txt}i.sex{col 19}_Isex_1-5{col 39}(_Isex_1 for sex==agecat1 omitted)
+i.wave{col 19}_Iwave_1-5{col 39}(naturally coded; _Iwave_1 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      25
+{txt}{hline 13}{char +}{hline 30}           F( 11,    13) ={res}    9.12
+    {txt}   Model {char |} {res} .008398286    11  .000763481           {txt}Prob > F      = {res} 0.0002
+    {txt}Residual {char |} {res} .001087998    13  .000083692           {txt}R-squared     = {res} 0.8853
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.7883
+    {txt}   Total {char |} {res} .009486283    24  .000395262           {txt}Root MSE      = {res} .00915
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} .6793477{col 26}{space 2} .4034705{col 37}{space 1}    1.68{col 46}{space 3}0.116{col 54}{space 4}-.1922973{col 67}{space 3} 1.550993
+{txt}{space 6}savave {c |}{col 14}{res}{space 2}-9.68e-07{col 26}{space 2} 1.02e-06{col 37}{space 1}   -0.95{col 46}{space 3}0.359{col 54}{space 4}-3.16e-06{col 67}{space 3} 1.23e-06
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2}-5.46e-07{col 26}{space 2} 7.48e-07{col 37}{space 1}   -0.73{col 46}{space 3}0.479{col 54}{space 4}-2.16e-06{col 67}{space 3} 1.07e-06
+{txt}{space 5}_Isex_2 {c |}{col 14}{res}{space 2} .0015838{col 26}{space 2} .0137754{col 37}{space 1}    0.11{col 46}{space 3}0.910{col 54}{space 4}-.0281761{col 67}{space 3} .0313436
+{txt}{space 5}_Isex_3 {c |}{col 14}{res}{space 2} .0017729{col 26}{space 2} .0181096{col 37}{space 1}    0.10{col 46}{space 3}0.924{col 54}{space 4}-.0373505{col 67}{space 3} .0408963
+{txt}{space 5}_Isex_4 {c |}{col 14}{res}{space 2}-.0017716{col 26}{space 2} .0176668{col 37}{space 1}   -0.10{col 46}{space 3}0.922{col 54}{space 4}-.0399383{col 67}{space 3} .0363951
+{txt}{space 5}_Isex_5 {c |}{col 14}{res}{space 2}-.0367771{col 26}{space 2} .0080294{col 37}{space 1}   -4.58{col 46}{space 3}0.001{col 54}{space 4}-.0541236{col 67}{space 3}-.0194307
+{txt}{space 4}_Iwave_2 {c |}{col 14}{res}{space 2}  .023451{col 26}{space 2} .0078537{col 37}{space 1}    2.99{col 46}{space 3}0.011{col 54}{space 4} .0064842{col 67}{space 3} .0404178
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0455664{col 26}{space 2} .0101978{col 37}{space 1}    4.47{col 46}{space 3}0.001{col 54}{space 4} .0235354{col 67}{space 3} .0675974
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0506176{col 26}{space 2} .0133952{col 37}{space 1}    3.78{col 46}{space 3}0.002{col 54}{space 4}  .021679{col 67}{space 3} .0795561
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0381216{col 26}{space 2} .0147939{col 37}{space 1}    2.58{col 46}{space 3}0.023{col 54}{space 4} .0061614{col 67}{space 3} .0700818
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0104655{col 26}{space 2} .0301205{col 37}{space 1}    0.35{col 46}{space 3}0.734{col 54}{space 4} -.054606{col 67}{space 3} .0755369
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. import excel "C:\EconProject\TestFE2.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. xi: regress mortrate smokerate savave incomeave i.agecat i.wave
+{txt}i.agecat{col 19}_Iagecat_1-5{col 39}(_Iagecat_1 for agecat==agecat1 omitted)
+i.wave{col 19}_Iwave_2-5{col 39}(naturally coded; _Iwave_2 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      20
+{txt}{hline 13}{char +}{hline 30}           F( 10,     9) ={res}   21.40
+    {txt}   Model {char |} {res}  .00795698    10  .000795698           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} .000334601     9  .000037178           {txt}R-squared     = {res} 0.9596
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9148
+    {txt}   Total {char |} {res} .008291581    19  .000436399           {txt}Root MSE      = {res}  .0061
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2}  .240251{col 26}{space 2} .3075049{col 37}{space 1}    0.78{col 46}{space 3}0.455{col 54}{space 4}-.4553735{col 67}{space 3} .9358754
+{txt}{space 6}savave {c |}{col 14}{res}{space 2}-9.83e-07{col 26}{space 2} 6.81e-07{col 37}{space 1}   -1.44{col 46}{space 3}0.183{col 54}{space 4}-2.52e-06{col 67}{space 3} 5.59e-07
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2} 7.05e-07{col 26}{space 2} 6.26e-07{col 37}{space 1}    1.13{col 46}{space 3}0.289{col 54}{space 4}-7.12e-07{col 67}{space 3} 2.12e-06
+{txt}{space 2}_Iagecat_2 {c |}{col 14}{res}{space 2}-.0329818{col 26}{space 2} .0124843{col 37}{space 1}   -2.64{col 46}{space 3}0.027{col 54}{space 4}-.0612232{col 67}{space 3}-.0047403
+{txt}{space 2}_Iagecat_3 {c |}{col 14}{res}{space 2}-.0534536{col 26}{space 2} .0199174{col 37}{space 1}   -2.68{col 46}{space 3}0.025{col 54}{space 4}-.0985099{col 67}{space 3}-.0083973
+{txt}{space 2}_Iagecat_4 {c |}{col 14}{res}{space 2}-.0546385{col 26}{space 2} .0187045{col 37}{space 1}   -2.92{col 46}{space 3}0.017{col 54}{space 4} -.096951{col 67}{space 3}-.0123259
+{txt}{space 2}_Iagecat_5 {c |}{col 14}{res}{space 2}-.0560701{col 26}{space 2} .0073585{col 37}{space 1}   -7.62{col 46}{space 3}0.000{col 54}{space 4}-.0727161{col 67}{space 3}-.0394241
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0135057{col 26}{space 2} .0053402{col 37}{space 1}    2.53{col 46}{space 3}0.032{col 54}{space 4} .0014253{col 67}{space 3}  .025586
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0086193{col 26}{space 2} .0085021{col 37}{space 1}    1.01{col 46}{space 3}0.337{col 54}{space 4}-.0106137{col 67}{space 3} .0278524
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0032435{col 26}{space 2} .0093032{col 37}{space 1}    0.35{col 46}{space 3}0.735{col 54}{space 4}-.0178019{col 67}{space 3} .0242889
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0207242{col 26}{space 2} .0243061{col 37}{space 1}    0.85{col 46}{space 3}0.416{col 54}{space 4}  -.03426{col 67}{space 3} .0757084
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. xi: regress mortrate smokerate i.agecat i.wave
+{txt}i.agecat{col 19}_Iagecat_1-5{col 39}(_Iagecat_1 for agecat==agecat1 omitted)
+i.wave{col 19}_Iwave_2-5{col 39}(naturally coded; _Iwave_2 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      20
+{txt}{hline 13}{char +}{hline 30}           F(  8,    11) ={res}   26.15
+    {txt}   Model {char |} {res} .007877345     8  .000984668           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} .000414235    11  .000037658           {txt}R-squared     = {res} 0.9500
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9137
+    {txt}   Total {char |} {res} .008291581    19  .000436399           {txt}Root MSE      = {res} .00614
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2}  .349619{col 26}{space 2} .2911245{col 37}{space 1}    1.20{col 46}{space 3}0.255{col 54}{space 4}-.2911417{col 67}{space 3} .9903798
+{txt}{space 2}_Iagecat_2 {c |}{col 14}{res}{space 2} -.025787{col 26}{space 2} .0079006{col 37}{space 1}   -3.26{col 46}{space 3}0.008{col 54}{space 4} -.043176{col 67}{space 3} -.008398
+{txt}{space 2}_Iagecat_3 {c |}{col 14}{res}{space 2}-.0422382{col 26}{space 2} .0049017{col 37}{space 1}   -8.62{col 46}{space 3}0.000{col 54}{space 4}-.0530268{col 67}{space 3}-.0314496
+{txt}{space 2}_Iagecat_4 {c |}{col 14}{res}{space 2}-.0430063{col 26}{space 2} .0066917{col 37}{space 1}   -6.43{col 46}{space 3}0.000{col 54}{space 4}-.0577346{col 67}{space 3}-.0282779
+{txt}{space 2}_Iagecat_5 {c |}{col 14}{res}{space 2}-.0553143{col 26}{space 2} .0046385{col 37}{space 1}  -11.93{col 46}{space 3}0.000{col 54}{space 4}-.0655235{col 67}{space 3}-.0451052
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0123278{col 26}{space 2} .0038933{col 37}{space 1}    3.17{col 46}{space 3}0.009{col 54}{space 4} .0037587{col 67}{space 3} .0208969
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0065856{col 26}{space 2}  .003883{col 37}{space 1}    1.70{col 46}{space 3}0.118{col 54}{space 4}-.0019609{col 67}{space 3} .0151321
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2}-.0003049{col 26}{space 2} .0063745{col 37}{space 1}   -0.05{col 46}{space 3}0.963{col 54}{space 4}-.0143351{col 67}{space 3} .0137253
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0226215{col 26}{space 2} .0209034{col 37}{space 1}    1.08{col 46}{space 3}0.302{col 54}{space 4}-.0233866{col 67}{space 3} .0686297
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. import excel "C:\EconProject\TestFE2.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. xi: regress mortrate smokerate i.agecat i.wave
+{txt}i.agecat{col 19}_Iagecat_1-10{col 39}(_Iagecat_1 for agecat==1 omitted)
+i.wave{col 19}_Iwave_2-5{col 39}(naturally coded; _Iwave_2 omitted)
+note: _Iagecat_2 omitted because of collinearity
+note: _Iagecat_3 omitted because of collinearity
+note: _Iagecat_4 omitted because of collinearity
+note: _Iagecat_5 omitted because of collinearity
+note: _Iagecat_10 omitted because of collinearity
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      20
+{txt}{hline 13}{char +}{hline 30}           F(  8,    11) ={res}   21.34
+    {txt}   Model {char |} {res} .008764531     8  .001095566           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} .000564832    11  .000051348           {txt}R-squared     = {res} 0.9395
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.8954
+    {txt}   Total {char |} {res} .009329363    19  .000491019           {txt}Root MSE      = {res} .00717
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} .2475087{col 26}{space 2} .4524047{col 37}{space 1}    0.55{col 46}{space 3}0.595{col 54}{space 4}-.7482273{col 67}{space 3} 1.243245
+{txt}{space 2}_Iagecat_2 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_3 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_4 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_5 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_6 {c |}{col 14}{res}{space 2} .0493151{col 26}{space 2} .0108365{col 37}{space 1}    4.55{col 46}{space 3}0.001{col 54}{space 4} .0254641{col 67}{space 3}  .073166
+{txt}{space 2}_Iagecat_7 {c |}{col 14}{res}{space 2} .0225606{col 26}{space 2} .0051476{col 37}{space 1}    4.38{col 46}{space 3}0.001{col 54}{space 4} .0112307{col 67}{space 3} .0338905
+{txt}{space 2}_Iagecat_8 {c |}{col 14}{res}{space 2} .0038221{col 26}{space 2} .0067425{col 37}{space 1}    0.57{col 46}{space 3}0.582{col 54}{space 4} -.011018{col 67}{space 3} .0186622
+{txt}{space 2}_Iagecat_9 {c |}{col 14}{res}{space 2} .0003505{col 26}{space 2} .0072566{col 37}{space 1}    0.05{col 46}{space 3}0.962{col 54}{space 4}-.0156212{col 67}{space 3} .0163221
+{txt}{space 1}_Iagecat_10 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0149746{col 26}{space 2} .0047745{col 37}{space 1}    3.14{col 46}{space 3}0.009{col 54}{space 4}  .004466{col 67}{space 3} .0254832
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0070211{col 26}{space 2} .0048278{col 37}{space 1}    1.45{col 46}{space 3}0.174{col 54}{space 4}-.0036047{col 67}{space 3} .0176469
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0032806{col 26}{space 2}  .008558{col 37}{space 1}    0.38{col 46}{space 3}0.709{col 54}{space 4}-.0155553{col 67}{space 3} .0221165
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0157553{col 26}{space 2} .0228852{col 37}{space 1}   -0.69{col 46}{space 3}0.505{col 54}{space 4}-.0661254{col 67}{space 3} .0346147
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. drop _Iagecat_2 _Iagecat_3 _Iagecat_4 _Iagecat_5 _Iagecat_6 _Iagecat_7 _Iagecat_8 _Iagecat_9 _Iagecat_10 _Iwave_3 _Iwave_4 _Iwave_5 
+
+. xi: regress mortrate smokerate i.agecat i.wave
+{txt}i.agecat{col 19}_Iagecat_1-10{col 39}(_Iagecat_1 for agecat==1 omitted)
+i.wave{col 19}_Iwave_2-5{col 39}(naturally coded; _Iwave_2 omitted)
+note: _Iagecat_2 omitted because of collinearity
+note: _Iagecat_3 omitted because of collinearity
+note: _Iagecat_4 omitted because of collinearity
+note: _Iagecat_5 omitted because of collinearity
+note: _Iagecat_10 omitted because of collinearity
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      20
+{txt}{hline 13}{char +}{hline 30}           F(  8,    11) ={res}   21.34
+    {txt}   Model {char |} {res} .008764531     8  .001095566           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} .000564832    11  .000051348           {txt}R-squared     = {res} 0.9395
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.8954
+    {txt}   Total {char |} {res} .009329363    19  .000491019           {txt}Root MSE      = {res} .00717
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} .2475087{col 26}{space 2} .4524047{col 37}{space 1}    0.55{col 46}{space 3}0.595{col 54}{space 4}-.7482273{col 67}{space 3} 1.243245
+{txt}{space 2}_Iagecat_2 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_3 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_4 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_5 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_6 {c |}{col 14}{res}{space 2} .0493151{col 26}{space 2} .0108365{col 37}{space 1}    4.55{col 46}{space 3}0.001{col 54}{space 4} .0254641{col 67}{space 3}  .073166
+{txt}{space 2}_Iagecat_7 {c |}{col 14}{res}{space 2} .0225606{col 26}{space 2} .0051476{col 37}{space 1}    4.38{col 46}{space 3}0.001{col 54}{space 4} .0112307{col 67}{space 3} .0338905
+{txt}{space 2}_Iagecat_8 {c |}{col 14}{res}{space 2} .0038221{col 26}{space 2} .0067425{col 37}{space 1}    0.57{col 46}{space 3}0.582{col 54}{space 4} -.011018{col 67}{space 3} .0186622
+{txt}{space 2}_Iagecat_9 {c |}{col 14}{res}{space 2} .0003505{col 26}{space 2} .0072566{col 37}{space 1}    0.05{col 46}{space 3}0.962{col 54}{space 4}-.0156212{col 67}{space 3} .0163221
+{txt}{space 1}_Iagecat_10 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0149746{col 26}{space 2} .0047745{col 37}{space 1}    3.14{col 46}{space 3}0.009{col 54}{space 4}  .004466{col 67}{space 3} .0254832
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0070211{col 26}{space 2} .0048278{col 37}{space 1}    1.45{col 46}{space 3}0.174{col 54}{space 4}-.0036047{col 67}{space 3} .0176469
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0032806{col 26}{space 2}  .008558{col 37}{space 1}    0.38{col 46}{space 3}0.709{col 54}{space 4}-.0155553{col 67}{space 3} .0221165
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0157553{col 26}{space 2} .0228852{col 37}{space 1}   -0.69{col 46}{space 3}0.505{col 54}{space 4}-.0661254{col 67}{space 3} .0346147
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. xi: regress mortrate smokerate saveave incomeave i.agecat i.wave
+{txt}i.agecat{col 19}_Iagecat_1-10{col 39}(_Iagecat_1 for agecat==1 omitted)
+i.wave{col 19}_Iwave_2-5{col 39}(naturally coded; _Iwave_2 omitted)
+{err}variable saveave not found
+{txt}{search r(111):r(111);}
+
+{com}. xi: regress mortrate smokerate savave incomeave i.agecat i.wave
+{txt}i.agecat{col 19}_Iagecat_1-10{col 39}(_Iagecat_1 for agecat==1 omitted)
+i.wave{col 19}_Iwave_2-5{col 39}(naturally coded; _Iwave_2 omitted)
+note: _Iagecat_2 omitted because of collinearity
+note: _Iagecat_3 omitted because of collinearity
+note: _Iagecat_4 omitted because of collinearity
+note: _Iagecat_5 omitted because of collinearity
+note: _Iagecat_9 omitted because of collinearity
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      20
+{txt}{hline 13}{char +}{hline 30}           F( 10,     9) ={res}   14.25
+    {txt}   Model {char |} {res} .008775143    10  .000877514           {txt}Prob > F      = {res} 0.0002
+    {txt}Residual {char |} {res}  .00055422     9   .00006158           {txt}R-squared     = {res} 0.9406
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.8746
+    {txt}   Total {char |} {res} .009329363    19  .000491019           {txt}Root MSE      = {res} .00785
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} .2033261{col 26}{space 2} .5163949{col 37}{space 1}    0.39{col 46}{space 3}0.703{col 54}{space 4}-.9648404{col 67}{space 3} 1.371493
+{txt}{space 6}savave {c |}{col 14}{res}{space 2}-3.35e-07{col 26}{space 2} 8.09e-07{col 37}{space 1}   -0.41{col 46}{space 3}0.688{col 54}{space 4}-2.16e-06{col 67}{space 3} 1.49e-06
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2} 9.46e-08{col 26}{space 2} 8.17e-07{col 37}{space 1}    0.12{col 46}{space 3}0.910{col 54}{space 4}-1.75e-06{col 67}{space 3} 1.94e-06
+{txt}{space 2}_Iagecat_2 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_3 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_4 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_5 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 2}_Iagecat_6 {c |}{col 14}{res}{space 2} .0471008{col 26}{space 2} .0331883{col 37}{space 1}    1.42{col 46}{space 3}0.190{col 54}{space 4}-.0279764{col 67}{space 3} .1221781
+{txt}{space 2}_Iagecat_7 {c |}{col 14}{res}{space 2} .0196999{col 26}{space 2} .0306988{col 37}{space 1}    0.64{col 46}{space 3}0.537{col 54}{space 4}-.0497456{col 67}{space 3} .0891454
+{txt}{space 2}_Iagecat_8 {c |}{col 14}{res}{space 2} .0018532{col 26}{space 2} .0127071{col 37}{space 1}    0.15{col 46}{space 3}0.887{col 54}{space 4}-.0268923{col 67}{space 3} .0305987
+{txt}{space 2}_Iagecat_9 {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 1}_Iagecat_10 {c |}{col 14}{res}{space 2}-.0019888{col 26}{space 2} .0161498{col 37}{space 1}   -0.12{col 46}{space 3}0.905{col 54}{space 4}-.0385222{col 67}{space 3} .0345446
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0159902{col 26}{space 2}  .008494{col 37}{space 1}    1.88{col 46}{space 3}0.092{col 54}{space 4}-.0032245{col 67}{space 3} .0352048
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0098266{col 26}{space 2} .0151036{col 37}{space 1}    0.65{col 46}{space 3}0.532{col 54}{space 4}-.0243401{col 67}{space 3} .0439933
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0063898{col 26}{space 2} .0173116{col 37}{space 1}    0.37{col 46}{space 3}0.721{col 54}{space 4}-.0327719{col 67}{space 3} .0455514
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0076788{col 26}{space 2} .0797135{col 37}{space 1}   -0.10{col 46}{space 3}0.925{col 54}{space 4}-.1880033{col 67}{space 3} .1726457
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. import excel "C:\EconProject\TestFE2.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. import excel "C:\EconProject\TestFE2.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. xi: regress mortrate smokerate savave incomeave i.agecat i.wave
+{txt}i.agecat{col 19}_Iagecat_1-5{col 39}(_Iagecat_1 for agecat==agecat1 omitted)
+i.wave{col 19}_Iwave_2-5{col 39}(naturally coded; _Iwave_2 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      20
+{txt}{hline 13}{char +}{hline 30}           F( 10,     9) ={res}   14.25
+    {txt}   Model {char |} {res} .008775143    10  .000877514           {txt}Prob > F      = {res} 0.0002
+    {txt}Residual {char |} {res}  .00055422     9   .00006158           {txt}R-squared     = {res} 0.9406
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.8746
+    {txt}   Total {char |} {res} .009329363    19  .000491019           {txt}Root MSE      = {res} .00785
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} .2033261{col 26}{space 2} .5163949{col 37}{space 1}    0.39{col 46}{space 3}0.703{col 54}{space 4}-.9648404{col 67}{space 3} 1.371493
+{txt}{space 6}savave {c |}{col 14}{res}{space 2}-3.35e-07{col 26}{space 2} 8.09e-07{col 37}{space 1}   -0.41{col 46}{space 3}0.688{col 54}{space 4}-2.16e-06{col 67}{space 3} 1.49e-06
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2} 9.46e-08{col 26}{space 2} 8.17e-07{col 37}{space 1}    0.12{col 46}{space 3}0.910{col 54}{space 4}-1.75e-06{col 67}{space 3} 1.94e-06
+{txt}{space 2}_Iagecat_2 {c |}{col 14}{res}{space 2}-.0274009{col 26}{space 2} .0132506{col 37}{space 1}   -2.07{col 46}{space 3}0.069{col 54}{space 4} -.057376{col 67}{space 3} .0025741
+{txt}{space 2}_Iagecat_3 {c |}{col 14}{res}{space 2}-.0452476{col 26}{space 2}  .022761{col 37}{space 1}   -1.99{col 46}{space 3}0.078{col 54}{space 4}-.0967365{col 67}{space 3} .0062412
+{txt}{space 2}_Iagecat_4 {c |}{col 14}{res}{space 2}-.0471008{col 26}{space 2} .0331883{col 37}{space 1}   -1.42{col 46}{space 3}0.190{col 54}{space 4}-.1221781{col 67}{space 3} .0279764
+{txt}{space 2}_Iagecat_5 {c |}{col 14}{res}{space 2}-.0490897{col 26}{space 2} .0220363{col 37}{space 1}   -2.23{col 46}{space 3}0.053{col 54}{space 4}-.0989393{col 67}{space 3}   .00076
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .0159902{col 26}{space 2}  .008494{col 37}{space 1}    1.88{col 46}{space 3}0.092{col 54}{space 4}-.0032245{col 67}{space 3} .0352048
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .0098266{col 26}{space 2} .0151036{col 37}{space 1}    0.65{col 46}{space 3}0.532{col 54}{space 4}-.0243401{col 67}{space 3} .0439933
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .0063898{col 26}{space 2} .0173116{col 37}{space 1}    0.37{col 46}{space 3}0.721{col 54}{space 4}-.0327719{col 67}{space 3} .0455514
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .039422{col 26}{space 2} .0546306{col 37}{space 1}    0.72{col 46}{space 3}0.489{col 54}{space 4}-.0841609{col 67}{space 3} .1630049
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. xi: regress logmortrate smokerate savave incomeave i.agecat i.wave
+{txt}i.agecat{col 19}_Iagecat_1-5{col 39}(_Iagecat_1 for agecat==agecat1 omitted)
+i.wave{col 19}_Iwave_2-5{col 39}(naturally coded; _Iwave_2 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      20
+{txt}{hline 13}{char +}{hline 30}           F( 10,     9) ={res}   32.91
+    {txt}   Model {char |} {res} 20.6909455    10  2.06909455           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res}  .56578779     9   .06286531           {txt}R-squared     = {res} 0.9734
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9438
+    {txt}   Total {char |} {res} 21.2567333    19  1.11877543           {txt}Root MSE      = {res} .25073
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} logmortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2}-13.87357{col 26}{space 2} 16.49938{col 37}{space 1}   -0.84{col 46}{space 3}0.422{col 54}{space 4}-51.19775{col 67}{space 3} 23.45062
+{txt}{space 6}savave {c |}{col 14}{res}{space 2}-7.55e-06{col 26}{space 2} .0000258{col 37}{space 1}   -0.29{col 46}{space 3}0.777{col 54}{space 4} -.000066{col 67}{space 3} .0000509
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2} .0000133{col 26}{space 2} .0000261{col 37}{space 1}    0.51{col 46}{space 3}0.622{col 54}{space 4}-.0000458{col 67}{space 3} .0000724
+{txt}{space 2}_Iagecat_2 {c |}{col 14}{res}{space 2}-1.195478{col 26}{space 2} .4233726{col 37}{space 1}   -2.82{col 46}{space 3}0.020{col 54}{space 4}-2.153214{col 67}{space 3}-.2377427
+{txt}{space 2}_Iagecat_3 {c |}{col 14}{res}{space 2} -2.16706{col 26}{space 2} .7272376{col 37}{space 1}   -2.98{col 46}{space 3}0.015{col 54}{space 4}-3.812186{col 67}{space 3}-.5219342
+{txt}{space 2}_Iagecat_4 {c |}{col 14}{res}{space 2}-2.651167{col 26}{space 2} 1.060403{col 37}{space 1}   -2.50{col 46}{space 3}0.034{col 54}{space 4}-5.049966{col 67}{space 3}-.2523679
+{txt}{space 2}_Iagecat_5 {c |}{col 14}{res}{space 2}-3.282088{col 26}{space 2} .7040851{col 37}{space 1}   -4.66{col 46}{space 3}0.001{col 54}{space 4}-4.874839{col 67}{space 3}-1.689337
+{txt}{space 4}_Iwave_3 {c |}{col 14}{res}{space 2} .8681769{col 26}{space 2} .2713911{col 37}{space 1}    3.20{col 46}{space 3}0.011{col 54}{space 4} .2542476{col 67}{space 3} 1.482106
+{txt}{space 4}_Iwave_4 {c |}{col 14}{res}{space 2} .5048962{col 26}{space 2} .4825759{col 37}{space 1}    1.05{col 46}{space 3}0.323{col 54}{space 4}-.5867663{col 67}{space 3} 1.596559
+{txt}{space 4}_Iwave_5 {c |}{col 14}{res}{space 2} .7038925{col 26}{space 2} .5531259{col 37}{space 1}    1.27{col 46}{space 3}0.235{col 54}{space 4}-.5473651{col 67}{space 3}  1.95515
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-2.775632{col 26}{space 2} 1.745506{col 37}{space 1}   -1.59{col 46}{space 3}0.146{col 54}{space 4}-6.724241{col 67}{space 3} 1.172976
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. xtreg mortrate smokerate savave incomeave, fe
+{err}must specify panelvar; use xtset
+{txt}{search r(459):r(459);}
+
+{com}. xtreg mortrate wave agecat smokerate savave incomeave, fe
+{err}must specify panelvar; use xtset
+{txt}{search r(459):r(459);}
+
+{com}. xtset ?
+{err}variable ? not found
+{txt}{search r(111):r(111);}
+
+{com}. xtset?
+{err}variable ? not found
+{txt}{search r(111):r(111);}
+
+{com}. xtset agecat wave
+{err}varlist:  agecat:  string variable not allowed
+{txt}{search r(109):r(109);}
+
+{com}. import excel "C:\EconProject\TestFE2.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. xtset agecat wave
+{err}varlist:  agecat:  string variable not allowed
+{txt}{search r(109):r(109);}
+
+{com}. import excel "C:\EconProject\TestFE2.xlsx", sheet("Sheet1") firstrow case(lower) clear
+{res}
+{com}. xtset agecat wave
+{res}{txt}{col 8}panel variable:  {res}agecat (strongly balanced)
+{txt}{col 9}time variable:  {res}{col 25}wave, 2 to 5
+{txt}{col 17}delta:  {res}1 unit
+
+{com}. xtreg mortrate smokerate savave incomeave, fe
+
+{txt}Fixed-effects (within) regression               Number of obs      = {res}       20
+{txt}Group variable: {res}agecat                          {txt}Number of groups   = {res}        5
+
+{txt}R-sq:  within  = {res}0.1121                         {txt}Obs per group: min = {res}        4
+{txt}       between = {res}0.7166                                        {txt}avg = {res}      4.0
+{txt}       overall = {res}0.5024                                        {txt}max = {res}        4
+
+                                                {txt}F({res}3{txt},{res}12{txt})            = {res}     0.51
+{txt}corr(u_i, Xb)  = {res}-0.8680                        {txt}Prob > F           =    {res}0.6860
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} .0401313{col 26}{space 2} .3393739{col 37}{space 1}    0.12{col 46}{space 3}0.908{col 54}{space 4} -.699301{col 67}{space 3} .7795636
+{txt}{space 6}savave {c |}{col 14}{res}{space 2}-5.66e-07{col 26}{space 2} 8.22e-07{col 37}{space 1}   -0.69{col 46}{space 3}0.504{col 54}{space 4}-2.36e-06{col 67}{space 3} 1.23e-06
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2} 7.54e-07{col 26}{space 2} 7.22e-07{col 37}{space 1}    1.04{col 46}{space 3}0.317{col 54}{space 4}-8.19e-07{col 67}{space 3} 2.33e-06
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.0134882{col 26}{space 2} .0294701{col 37}{space 1}   -0.46{col 46}{space 3}0.655{col 54}{space 4}-.0776981{col 67}{space 3} .0507217
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res}  .0300919
+     {txt}sigma_e {c |} {res} .00944488
+         {txt}rho {c |} {res} .91032138{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+F test that all u_i=0:     F({res}4{txt}, {res}12{txt}) = {res}    3.98               {txt}Prob > F = {res}0.0278
+
+{com}. xtreg mortrate smokerate savave incomeave, be
+
+{txt}Between regression (regression on group means)  Number of obs      = {res}       20
+{txt}Group variable: {res}agecat                          {txt}Number of groups   = {res}        5
+
+{txt}R-sq:  within  = {res}0.0007                         {txt}Obs per group: min = {res}        4
+{txt}       between = {res}0.9973                                        {txt}avg = {res}      4.0
+{txt}       overall = {res}0.6250                                        {txt}max = {res}        4
+
+                                                {txt}F({res}3{txt},{res}1{txt})             = {res}   124.49
+{txt}sd(u_i + avg(e_i.))= {res} .0023288                  {txt}Prob > F           =    {res}0.0658
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}    mortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} 1.170593{col 26}{space 2} .1252655{col 37}{space 1}    9.34{col 46}{space 3}0.068{col 54}{space 4}-.4210564{col 67}{space 3} 2.762242
+{txt}{space 6}savave {c |}{col 14}{res}{space 2} 3.29e-06{col 26}{space 2} 1.16e-06{col 37}{space 1}    2.83{col 46}{space 3}0.216{col 54}{space 4}-.0000115{col 67}{space 3} .0000181
+{txt}{space 3}incomeave {c |}{col 14}{res}{space 2}-2.47e-06{col 26}{space 2} 5.02e-07{col 37}{space 1}   -4.93{col 46}{space 3}0.128{col 54}{space 4}-8.86e-06{col 67}{space 3} 3.91e-06
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}  .003606{col 26}{space 2} .0115743{col 37}{space 1}    0.31{col 46}{space 3}0.808{col 54}{space 4}-.1434598{col 67}{space 3} .1506717
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. xttest0
+{err}last estimates not xtreg, re
+{txt}{search r(301):r(301);}
+
+{com}. quietly xtreg mortrate smokerate savave incomeave, fe
+
+. xttest0
+{err}last estimates not xtreg, re
+{txt}{search r(301):r(301);}
+
+{com}. quietly xtreg mortrate smokerate savave incomeave, re
+
+. xttest0
+
+{txt}Breusch and Pagan Lagrangian multiplier test for random effects
+
+        mortrate[agecat,t] = Xb + u[agecat] + e[agecat,t]
+
+{col 9}Estimated results:
+{col 26}{c |}{col 34}Var{col 42}sd = sqrt(Var)
+{col 17}{hline 9}{c +}{hline 29}
+{col 16} mortrate {c |}  {res}  .000491        .022159
+{col 24}{txt}e {c |}  {res} .0000892       .0094449
+{col 24}{txt}u {c |}  {res}        0              0
+
+{txt}{col 9}Test:{col 17}Var(u) = 0
+{col 30}{help j_chibar:chibar2(01)} ={col 44}{res}    0.00
+{txt}{col 27}Prob > chibar2 = {col 45}{res} 1.0000
+
+{com}. xtline mortrate
+{res}
+{com}. xtline y, overlay
+{err}variable y not found
+{txt}{search r(111):r(111);}
+
+{com}. xtline mortrate, overlay
+{res}
+{com}. bysort agecat: egen mortrate_mean = mean(mortrate)
+
+. toway scatter mortrate agecat, msymbol(circle_hollow) || connected mortrate_mean agecat, msymbol(diamond)
+{err}unrecognized command:  toway
+{txt}{search r(199):r(199);}
+
+{com}. twoway scatter mortrate agecat, msymbol(circle_hollow) || connected mortrate_mean agecat, msymbol(diamond)
+{res}
+{com}. bysort agecat: egen logmortrate_mean = log(mean(mortrate))
+{err}unknown egen function log()
+{txt}{search r(133):r(133);}
+
+{com}. gen logmortrate_mean = log(mortrate_mean)
+
+. twoway scatter logmortrate agecat, msymbol(circle_hollow) || connected logmortrate_mean agecat, msymbol(diamond)
+{res}
+{com}. bysort wave: egen mortrate_mean1 = mean(mortrate)
+
+. twoway scatter logmortrate year, msymbol(circle_hollow) || connected logmortrate_mean year, msymbol(diamond)
+{err}variable year not found
+{txt}{search r(111):r(111);}
+
+{com}. twoway scatter logmortrate wave, msymbol(circle_hollow) || connected logmortrate_mean1 wave, msymbol(diamond)
+{err}variable logmortrate_mean1 not found
+{txt}{search r(111):r(111);}
+
+{com}. gen logmortrate_mean1 = log(mortrate_mean1)
+
+. twoway scatter logmortrate1 wave, msymbol(circle_hollow) || connected logmortrate_mean1 wave, msymbol(diamond)
+{err}variable logmortrate1 not found
+{txt}{search r(111):r(111);}
+
+{com}. twoway scatter logmortrate wave, msymbol(circle_hollow) || connected logmortrate_mean1 wave, msymbol(diamond)
+{res}
+{com}. regress logmortrate smokerate
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      20
+{txt}{hline 13}{char +}{hline 30}           F(  1,    18) ={res}    3.37
+    {txt}   Model {char |} {res} 3.34836401     1  3.34836401           {txt}Prob > F      = {res} 0.0832
+    {txt}Residual {char |} {res} 17.9083692    18  .994909403           {txt}R-squared     = {res} 0.1575
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.1107
+    {txt}   Total {char |} {res} 21.2567333    19  1.11877543           {txt}Root MSE      = {res} .99745
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} logmortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} 37.27664{col 26}{space 2} 20.31946{col 37}{space 1}    1.83{col 46}{space 3}0.083{col 54}{space 4}-5.412965{col 67}{space 3} 79.96625
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-6.703234{col 26}{space 2} 1.308244{col 37}{space 1}   -5.12{col 46}{space 3}0.000{col 54}{space 4}-9.451753{col 67}{space 3}-3.954715
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. twoway scatter logmortrate smokerate
+{res}
+{com}. twoway scatter logmortrate smokerate, mlabel(agecat) || lfit logmortrate smokerate , clstyle(p2)
+{res}
+{com}. xi: regress logmortrate smokerate i.agecat
+{txt}i.agecat{col 19}_Iagecat_1-5{col 39}(naturally coded; _Iagecat_1 omitted)
+
+      Source {c |}       SS       df       MS              Number of obs ={res}      20
+{txt}{hline 13}{char +}{hline 30}           F(  5,    14) ={res}   20.28
+    {txt}   Model {char |} {res} 18.6784752     5  3.73569505           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} 2.57825801    14  .184161287           {txt}R-squared     = {res} 0.8787
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.8354
+    {txt}   Total {char |} {res} 21.2567333    19  1.11877543           {txt}Root MSE      = {res} .42914
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} logmortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} 9.470745{col 26}{space 2} 13.58926{col 37}{space 1}    0.70{col 46}{space 3}0.497{col 54}{space 4}-19.67533{col 67}{space 3} 38.61682
+{txt}{space 2}_Iagecat_2 {c |}{col 14}{res}{space 2}-.5856712{col 26}{space 2} .4373835{col 37}{space 1}   -1.34{col 46}{space 3}0.202{col 54}{space 4}-1.523765{col 67}{space 3} .3524232
+{txt}{space 2}_Iagecat_3 {c |}{col 14}{res}{space 2}-1.604822{col 26}{space 2} .3403408{col 37}{space 1}   -4.72{col 46}{space 3}0.000{col 54}{space 4}-2.334781{col 67}{space 3}-.8748638
+{txt}{space 2}_Iagecat_4 {c |}{col 14}{res}{space 2}-2.016714{col 26}{space 2} .3307931{col 37}{space 1}   -6.10{col 46}{space 3}0.000{col 54}{space 4}-2.726195{col 67}{space 3}-1.307233
+{txt}{space 2}_Iagecat_5 {c |}{col 14}{res}{space 2}-2.525677{col 26}{space 2} .4181735{col 37}{space 1}   -6.04{col 46}{space 3}0.000{col 54}{space 4} -3.42257{col 67}{space 3}-1.628784
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-3.592617{col 26}{space 2} 1.061734{col 37}{space 1}   -3.38{col 46}{space 3}0.004{col 54}{space 4}-5.869811{col 67}{space 3}-1.315423
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. predict yhat
+{txt}(option xb assumed; fitted values)
+
+{com}. separate logmortrate, by(agecat)
+
+              {txt}storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:logmortrate1   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}logmortrate, agecat == 1{p_end}
+{p 0 48}{bind:logmortrate2   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}logmortrate, agecat == 2{p_end}
+{p 0 48}{bind:logmortrate3   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}logmortrate, agecat == 3{p_end}
+{p 0 48}{bind:logmortrate4   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}logmortrate, agecat == 4{p_end}
+{p 0 48}{bind:logmortrate5   }{txt}{bind: double  }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}logmortrate, agecat == 5{p_end}
+
+{com}. separate yhat, by(agecat)
+
+              {txt}storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:yhat1          }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}yhat, agecat == 1{p_end}
+{p 0 48}{bind:yhat2          }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}yhat, agecat == 2{p_end}
+{p 0 48}{bind:yhat3          }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}yhat, agecat == 3{p_end}
+{p 0 48}{bind:yhat4          }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}yhat, agecat == 4{p_end}
+{p 0 48}{bind:yhat5          }{txt}{bind: float   }{bind:{txt}%9.0g     }{space 1}{bind:         }{bind:  }{res}{res}yhat, agecat == 5{p_end}
+
+{com}. twoway connected yhat1-yhat7 smokerate, msymbol(none diamond_hollow triangle_hollow square_hollow + circle_hollow x) msize(medium) mcolor(black black black black black black black) || lfit logmortrate smokerate, clwidth(thick) clcolor(black)
+{err}variable yhat7 not found
+{txt}{search r(111):r(111);}
+
+{com}. twoway connected yhat1-yhat5 smokerate, msymbol(none diamond_hollow triangle_hollow square_hollow + circle_hollow x) msize(medium) mcolor(black black black black black black black) || lfit logmortrate smokerate, clwidth(thick) clcolor(black)
+{res}
+{com}. twoway scatter logmortrate smokerate, mlabel(agecat) || lfit logmortrate smokerate , clstyle(p2)
+{res}
+{com}. twoway connected yhat1-yhat5 smokerate, msymbol(none diamond_hollow triangle_hollow square_hollow + circle_hollow x) msize(medium) mcolor(black black black black black black black) || lfit logmortrate smokerate, clwidth(thick) clcolor(black)
+{res}
+{com}. twoway scatter logmortrate smokerate, mlabel(agecat) || lfit logmortrate smokerate , clstyle(p2)
+{res}
+{com}. xtreg logmortrate smokerate, fe
+
+{txt}Fixed-effects (within) regression               Number of obs      = {res}       20
+{txt}Group variable: {res}agecat                          {txt}Number of groups   = {res}        5
+
+{txt}R-sq:  within  = {res}0.0335                         {txt}Obs per group: min = {res}        4
+{txt}       between = {res}0.2461                                        {txt}avg = {res}      4.0
+{txt}       overall = {res}0.1575                                        {txt}max = {res}        4
+
+                                                {txt}F({res}1{txt},{res}14{txt})            = {res}     0.49
+{txt}corr(u_i, Xb)  = {res}0.3292                         {txt}Prob > F           =    {res}0.4973
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} logmortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} 9.470745{col 26}{space 2} 13.58926{col 37}{space 1}    0.70{col 46}{space 3}0.497{col 54}{space 4}-19.67533{col 67}{space 3} 38.61682
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-4.939194{col 26}{space 2} .8674434{col 37}{space 1}   -5.69{col 46}{space 3}0.000{col 54}{space 4}-6.799675{col 67}{space 3}-3.078713
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res}  1.036617
+     {txt}sigma_e {c |} {res} .42914017
+         {txt}rho {c |} {res} .85369349{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+F test that all u_i=0:     F({res}4{txt}, {res}14{txt}) = {res}   20.81               {txt}Prob > F = {res}0.0000
+
+{com}. xtreg logmortrate smokerate, re
+{res}
+{txt}Random-effects GLS regression                   Number of obs      = {res}       20
+{txt}Group variable: {res}agecat                          {txt}Number of groups   = {res}        5
+
+{txt}R-sq:  within  = {res}0.0335                         {txt}Obs per group: min = {res}        4
+{txt}       between = {res}0.2461                                        {txt}avg = {res}      4.0
+{txt}       overall = {res}0.1575                                        {txt}max = {res}        4
+
+                                                {txt}Wald chi2({res}1{txt})       = {res}     0.84
+{txt}corr(u_i, X)   = {res}0{txt} (assumed)                    Prob > chi2        =    {res}0.3603
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} logmortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} 11.97934{col 26}{space 2}  13.0938{col 37}{space 1}    0.91{col 46}{space 3}0.360{col 54}{space 4}-13.68403{col 67}{space 3} 37.64272
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-5.098342{col 26}{space 2} .9586468{col 37}{space 1}   -5.32{col 46}{space 3}0.000{col 54}{space 4}-6.977256{col 67}{space 3}-3.219429
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res} 1.0591733
+     {txt}sigma_e {c |} {res} .42914017
+         {txt}rho {c |} {res}  .8589893{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+
+{com}. twoway scatter logmortrate smokerate, mlabel(agecat) || lfit logmortrate smokerate , clstyle(p2)
+{res}
+{com}. xtreg logmortrate smokerate, fe
+
+{txt}Fixed-effects (within) regression               Number of obs      = {res}       20
+{txt}Group variable: {res}agecat                          {txt}Number of groups   = {res}        5
+
+{txt}R-sq:  within  = {res}0.0335                         {txt}Obs per group: min = {res}        4
+{txt}       between = {res}0.2461                                        {txt}avg = {res}      4.0
+{txt}       overall = {res}0.1575                                        {txt}max = {res}        4
+
+                                                {txt}F({res}1{txt},{res}14{txt})            = {res}     0.49
+{txt}corr(u_i, Xb)  = {res}0.3292                         {txt}Prob > F           =    {res}0.4973
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} logmortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} 9.470745{col 26}{space 2} 13.58926{col 37}{space 1}    0.70{col 46}{space 3}0.497{col 54}{space 4}-19.67533{col 67}{space 3} 38.61682
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-4.939194{col 26}{space 2} .8674434{col 37}{space 1}   -5.69{col 46}{space 3}0.000{col 54}{space 4}-6.799675{col 67}{space 3}-3.078713
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res}  1.036617
+     {txt}sigma_e {c |} {res} .42914017
+         {txt}rho {c |} {res} .85369349{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+F test that all u_i=0:     F({res}4{txt}, {res}14{txt}) = {res}   20.81               {txt}Prob > F = {res}0.0000
+
+{com}. estimates store fixed
+
+. xtreg logmortrate smokerate, re
+{res}
+{txt}Random-effects GLS regression                   Number of obs      = {res}       20
+{txt}Group variable: {res}agecat                          {txt}Number of groups   = {res}        5
+
+{txt}R-sq:  within  = {res}0.0335                         {txt}Obs per group: min = {res}        4
+{txt}       between = {res}0.2461                                        {txt}avg = {res}      4.0
+{txt}       overall = {res}0.1575                                        {txt}max = {res}        4
+
+                                                {txt}Wald chi2({res}1{txt})       = {res}     0.84
+{txt}corr(u_i, X)   = {res}0{txt} (assumed)                    Prob > chi2        =    {res}0.3603
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} logmortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} 11.97934{col 26}{space 2}  13.0938{col 37}{space 1}    0.91{col 46}{space 3}0.360{col 54}{space 4}-13.68403{col 67}{space 3} 37.64272
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-5.098342{col 26}{space 2} .9586468{col 37}{space 1}   -5.32{col 46}{space 3}0.000{col 54}{space 4}-6.977256{col 67}{space 3}-3.219429
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res} 1.0591733
+     {txt}sigma_e {c |} {res} .42914017
+         {txt}rho {c |} {res}  .8589893{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+
+{com}. estimates store random
+
+. hausman fixed random
+
+{txt}{col 18}{hline 4} Coefficients {hline 4}
+{col 14}{c |}{col 21}(b){col 34}(B){col 49}(b-B){col 59}sqrt(diag(V_b-V_B))
+{col 14}{c |}{col 17}   fixed    {col 30}   random   {col 46}Difference{col 66}S.E.
+{hline 13}{c +}{hline 64}
+{space 3}smokerate {c |}{res}{col 18} 9.470745{col 31} 11.97934{col 47}-2.508598{col 63} 3.636004
+{txt}{hline 13}{c BT}{hline 64}
+{ralign 78:b = consistent under Ho and Ha; obtained from xtreg}
+{ralign 78:B = inconsistent under Ha, efficient under Ho; obtained from xtreg}
+
+    Test:  Ho:  difference in coefficients not systematic
+
+{ralign 25:chi2({res:1})} = (b-B)'[(V_b-V_B)^(-1)](b-B)
+{col 27}=  {res}      0.48
+{txt}{col 17}Prob>chi2 =  {res}    0.4902
+
+{com}. xtreg logmortrate smokerate i.wave, fe
+
+{txt}Fixed-effects (within) regression               Number of obs      = {res}       20
+{txt}Group variable: {res}agecat                          {txt}Number of groups   = {res}        5
+
+{txt}R-sq:  within  = {res}0.7810                         {txt}Obs per group: min = {res}        4
+{txt}       between = {res}0.2461                                        {txt}avg = {res}      4.0
+{txt}       overall = {res}0.0176                                        {txt}max = {res}        4
+
+                                                {txt}F({res}4{txt},{res}11{txt})            = {res}     9.81
+{txt}corr(u_i, Xb)  = {res}-0.2015                        {txt}Prob > F           =    {res}0.0012
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} logmortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2}-14.19842{col 26}{space 2} 14.54929{col 37}{space 1}   -0.98{col 46}{space 3}0.350{col 54}{space 4}-46.22119{col 67}{space 3} 17.82436
+{txt}{space 12} {c |}
+{space 8}wave {c |}
+{space 10}3  {c |}{col 14}{res}{space 2} .9310725{col 26}{space 2} .1535472{col 37}{space 1}    6.06{col 46}{space 3}0.000{col 54}{space 4} .5931173{col 67}{space 3} 1.269028
+{txt}{space 10}4  {c |}{col 14}{res}{space 2} .6114495{col 26}{space 2} .1552602{col 37}{space 1}    3.94{col 46}{space 3}0.002{col 54}{space 4} .2697241{col 67}{space 3}  .953175
+{txt}{space 10}5  {c |}{col 14}{res}{space 2} .8037981{col 26}{space 2} .2752229{col 37}{space 1}    2.92{col 46}{space 3}0.014{col 54}{space 4} .1980366{col 67}{space 3}  1.40956
+{txt}{space 12} {c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}-4.024173{col 26}{space 2} .8455106{col 37}{space 1}   -4.76{col 46}{space 3}0.001{col 54}{space 4} -5.88513{col 67}{space 3}-2.163217
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res} 1.1498995
+     {txt}sigma_e {c |} {res}  .2304507
+         {txt}rho {c |} {res} .96138691{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+F test that all u_i=0:     F({res}4{txt}, {res}11{txt}) = {res}   71.04               {txt}Prob > F = {res}0.0000
+
+{com}. testparm i.wave
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}3.wave = 0{p_end}
+{p 0 7}{space 1}{text:( 2)}{space 1} 4.wave = 0{p_end}
+{p 0 7}{space 1}{text:( 3)}{space 1} 5.wave = 0{p_end}
+
+{txt}       F(  3,    11) ={res}   12.52
+{txt}{col 13}Prob > F ={res}    0.0007
+
+{com}. xtreg logmortrate smokerate, re
+{res}
+{txt}Random-effects GLS regression                   Number of obs      = {res}       20
+{txt}Group variable: {res}agecat                          {txt}Number of groups   = {res}        5
+
+{txt}R-sq:  within  = {res}0.0335                         {txt}Obs per group: min = {res}        4
+{txt}       between = {res}0.2461                                        {txt}avg = {res}      4.0
+{txt}       overall = {res}0.1575                                        {txt}max = {res}        4
+
+                                                {txt}Wald chi2({res}1{txt})       = {res}     0.84
+{txt}corr(u_i, X)   = {res}0{txt} (assumed)                    Prob > chi2        =    {res}0.3603
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1} logmortrate{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      z{col 46}   P>|z|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 3}smokerate {c |}{col 14}{res}{space 2} 11.97934{col 26}{space 2}  13.0938{col 37}{space 1}    0.91{col 46}{space 3}0.360{col 54}{space 4}-13.68403{col 67}{space 3} 37.64272
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-5.098342{col 26}{space 2} .9586468{col 37}{space 1}   -5.32{col 46}{space 3}0.000{col 54}{space 4}-6.977256{col 67}{space 3}-3.219429
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+     sigma_u {c |} {res} 1.0591733
+     {txt}sigma_e {c |} {res} .42914017
+         {txt}rho {c |} {res}  .8589893{txt}   (fraction of variance due to u_i)
+{hline 13}{c BT}{hline 64}
+
+{com}. xttest0
+
+{txt}Breusch and Pagan Lagrangian multiplier test for random effects
+
+        logmortrate[agecat,t] = Xb + u[agecat] + e[agecat,t]
+
+{col 9}Estimated results:
+{col 26}{c |}{col 34}Var{col 42}sd = sqrt(Var)
+{col 17}{hline 9}{c +}{hline 29}
+{col 16}logmort~e {c |}  {res} 1.118775       1.057722
+{col 24}{txt}e {c |}  {res} .1841613       .4291402
+{col 24}{txt}u {c |}  {res} 1.121848       1.059173
+
+{txt}{col 9}Test:{col 17}Var(u) = 0
+{col 30}{help j_chibar:chibar2(01)} ={col 44}{res}   16.90
+{txt}{col 27}Prob > chibar2 = {col 45}{res} 0.0000
+
+{com}. import excel "C:\EconProject\DataStats.xlsx", sheet("ages") firstrow case(lower) clear
+{res}
+{com}. regress age logmort
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      36
+{txt}{hline 13}{char +}{hline 30}           F(  1,    34) ={res}  326.54
+    {txt}   Model {char |} {res} 3518.63784     1  3518.63784           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res}  366.36216    34  10.7753577           {txt}R-squared     = {res} 0.9057
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9029
+    {txt}   Total {char |} {res}       3885    35         111           {txt}Root MSE      = {res} 3.2826
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         age{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}logmort {c |}{col 14}{res}{space 2} 10.87657{col 26}{space 2} .6018949{col 37}{space 1}   18.07{col 46}{space 3}0.000{col 54}{space 4} 9.653376{col 67}{space 3} 12.09977
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 94.97812{col 26}{space 2} 1.564069{col 37}{space 1}   60.73{col 46}{space 3}0.000{col 54}{space 4} 91.79955{col 67}{space 3} 98.15669
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. twoway scatter logmort age, mlabel(age) || lfit logmort age , clstyle(p2)
+{res}
+{com}. graph save Graph "C:\EconProject\AvevsLnMort.gph"
+{res}{txt}(file C:\EconProject\AvevsLnMort.gph saved)
+
+{com}. regress age logmort, robust
+
+{txt}Linear regression                                      Number of obs ={res}      36
+                                                       {txt}F(  1,    34) ={res}  295.31
+                                                       {txt}Prob > F      = {res} 0.0000
+                                                       {txt}R-squared     = {res} 0.9057
+                                                       {txt}Root MSE      = {res} 3.2826
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |}{col 26}    Robust
+{col 1}         age{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}logmort {c |}{col 14}{res}{space 2} 10.87657{col 26}{space 2} .6329295{col 37}{space 1}   17.18{col 46}{space 3}0.000{col 54}{space 4} 9.590306{col 67}{space 3} 12.16284
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 94.97812{col 26}{space 2} 1.433822{col 37}{space 1}   66.24{col 46}{space 3}0.000{col 54}{space 4} 92.06424{col 67}{space 3} 97.89199
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. regress age logmort
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      36
+{txt}{hline 13}{char +}{hline 30}           F(  1,    34) ={res}  326.54
+    {txt}   Model {char |} {res} 3518.63784     1  3518.63784           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res}  366.36216    34  10.7753577           {txt}R-squared     = {res} 0.9057
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9029
+    {txt}   Total {char |} {res}       3885    35         111           {txt}Root MSE      = {res} 3.2826
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         age{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 5}logmort {c |}{col 14}{res}{space 2} 10.87657{col 26}{space 2} .6018949{col 37}{space 1}   18.07{col 46}{space 3}0.000{col 54}{space 4} 9.653376{col 67}{space 3} 12.09977
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 94.97812{col 26}{space 2} 1.564069{col 37}{space 1}   60.73{col 46}{space 3}0.000{col 54}{space 4} 91.79955{col 67}{space 3} 98.15669
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. predict yhat
+{txt}(option xb assumed; fitted values)
+
+{com}. rvfplot
+{res}
+{com}. twoway scatter logmort age, mlabel(age) || lfit logmort age , clstyle(p2)
+{res}
+{com}. estat hettest
+
+{txt}Breusch-Pagan / Cook-Weisberg test for heteroskedasticity 
+         Ho: Constant variance
+{p 9 20}Variables: fitted values of age
+
+{col 10}chi2({res}1{txt}){col 23}={res}     2.67
+{txt}{col 10}Prob > chi2{col 23}={res}   0.1022
+
+{com}. xi: regress logmort age, robust linktest
+{err}option {bf:linktest} not allowed
+{txt}{search r(198):r(198);}
+
+{com}. xi: regress logmort age, robust ovtest
+{err}option {bf:ovtest} not allowed
+{txt}{search r(198):r(198);}
+
+{com}. describe age
+
+              {txt}storage   display    value
+variable name   type    format     label      variable label
+{hline}
+{p 0 48}{res}{bind:age            }{txt}{bind: byte    }{bind:{txt}%10.0g    }{space 1}{bind:         }{bind:  }{res}{res}Age{p_end}
+
+{com}. xi: regress logmort i.age, robust ovtest
+{txt}i.age{col 19}_Iage_51-86{col 39}(naturally coded; _Iage_51 omitted)
+{err}option {bf:ovtest} not allowed
+{txt}{search r(198):r(198);}
+
+{com}. reg logmort age
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      36
+{txt}{hline 13}{char +}{hline 30}           F(  1,    34) ={res}  326.54
+    {txt}   Model {char |} {res} 26.9385303     1  26.9385303           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} 2.80485194    34  .082495645           {txt}R-squared     = {res} 0.9057
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9029
+    {txt}   Total {char |} {res} 29.7433822    35  .849810921           {txt}Root MSE      = {res} .28722
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     logmort{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}age {c |}{col 14}{res}{space 2} .0832706{col 26}{space 2} .0046081{col 37}{space 1}   18.07{col 46}{space 3}0.000{col 54}{space 4} .0739058{col 67}{space 3} .0926353
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -8.13845{col 26}{space 2} .3192627{col 37}{space 1}  -25.49{col 46}{space 3}0.000{col 54}{space 4} -8.78727{col 67}{space 3} -7.48963
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. predict y
+{txt}(option xb assumed; fitted values)
+
+{com}. gen y2 = y^2
+
+. gen y3 = y^3
+
+. reg logmort age y2 y3
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      36
+{txt}{hline 13}{char +}{hline 30}           F(  3,    32) ={res}  108.86
+    {txt}   Model {char |} {res}  27.089128     3  9.02970933           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} 2.65425424    32  .082945445           {txt}R-squared     = {res} 0.9108
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9024
+    {txt}   Total {char |} {res} 29.7433822    35  .849810921           {txt}Root MSE      = {res}   .288
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     logmort{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}age {c |}{col 14}{res}{space 2} .0601525{col 26}{space 2} .1330301{col 37}{space 1}    0.45{col 46}{space 3}0.654{col 54}{space 4}-.2108209{col 67}{space 3} .3311259
+{txt}{space 10}y2 {c |}{col 14}{res}{space 2}-.0112569{col 26}{space 2} .6960394{col 37}{space 1}   -0.02{col 46}{space 3}0.987{col 54}{space 4}-1.429043{col 67}{space 3} 1.406529
+{txt}{space 10}y3 {c |}{col 14}{res}{space 2} .0116508{col 26}{space 2}  .094797{col 37}{space 1}    0.12{col 46}{space 3}0.903{col 54}{space 4}-.1814443{col 67}{space 3} .2047459
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-6.247968{col 26}{space 2} 11.88599{col 37}{space 1}   -0.53{col 46}{space 3}0.603{col 54}{space 4}-30.45893{col 67}{space 3}   17.963
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. test y2 y3
+
+{p 0 7}{space 1}{text:( 1)}{space 1} {res}y2 = 0{p_end}
+{p 0 7}{space 1}{text:( 2)}{space 1} y3 = 0{p_end}
+
+{txt}       F(  2,    32) ={res}    0.91
+{txt}{col 13}Prob > F ={res}    0.4135
+
+{com}. quietly reg logmort age
+
+. ovtest
+
+{txt}Ramsey RESET test using powers of the fitted values of logmort
+       Ho:  model has no omitted variables
+                  F(3, 31) = {res}     2.04
+                  {txt}Prob > F =      {res}0.1288
+
+{com}. linktest
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      36
+{txt}{hline 13}{char +}{hline 30}           F(  2,    33) ={res}  168.31
+    {txt}   Model {char |} {res} 27.0878751     2  13.5439375           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} 2.65550713    33  .080469913           {txt}R-squared     = {res} 0.9107
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9053
+    {txt}   Total {char |} {res} 29.7433822    35  .849810921           {txt}Root MSE      = {res} .28367
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     logmort{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 8}_hat {c |}{col 14}{res}{space 2}   .53091{col 26}{space 2} .3486429{col 37}{space 1}    1.52{col 46}{space 3}0.137{col 54}{space 4}-.1784094{col 67}{space 3} 1.240229
+{txt}{space 6}_hatsq {c |}{col 14}{res}{space 2}-.0963454{col 26}{space 2} .0707217{col 37}{space 1}   -1.36{col 46}{space 3}0.182{col 54}{space 4}-.2402298{col 67}{space 3} .0475389
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-.4988859{col 26}{space 2} .3924838{col 37}{space 1}   -1.27{col 46}{space 3}0.213{col 54}{space 4}  -1.2974{col 67}{space 3} .2996284
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. vif
+
+{txt}    Variable {c |}       VIF       1/VIF  
+{hline 13}{c +}{hline 22}
+{space 9}age {c |} {res}     1.00    1.000000
+{txt}{hline 13}{c +}{hline 22}
+    Mean VIF {c |} {res}     1.00
+
+{com}. avplot age
+{res}
+{com}. reg logmort age
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      36
+{txt}{hline 13}{char +}{hline 30}           F(  1,    34) ={res}  326.54
+    {txt}   Model {char |} {res} 26.9385303     1  26.9385303           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} 2.80485194    34  .082495645           {txt}R-squared     = {res} 0.9057
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9029
+    {txt}   Total {char |} {res} 29.7433822    35  .849810921           {txt}Root MSE      = {res} .28722
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     logmort{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}age {c |}{col 14}{res}{space 2} .0832706{col 26}{space 2} .0046081{col 37}{space 1}   18.07{col 46}{space 3}0.000{col 54}{space 4} .0739058{col 67}{space 3} .0926353
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -8.13845{col 26}{space 2} .3192627{col 37}{space 1}  -25.49{col 46}{space 3}0.000{col 54}{space 4} -8.78727{col 67}{space 3} -7.48963
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. predict e, resid
+
+. kdensity e, normal
+{txt}(n() set to 36)
+{res}
+{com}. histogram e, kdensity normal
+{txt}(bin={res}6{txt}, start={res}-.66747439{txt}, width={res}.21289079{txt})
+{res}
+{com}. pnorm e
+{res}
+{com}. qnorm e
+{res}
+{com}. swilk e
+
+                   {txt}Shapiro-Wilk W test for normal data
+
+    Variable {c |}    Obs{col 29}W{col 41}V{col 51}z       Prob>z
+{hline 13}{c +}{hline 50}
+           e {c |}{res}     36    0.96047      1.442     0.765    0.22220
+
+{com}. ssc install outreg2
+{txt}checking {hilite:outreg2} consistency and verifying not already installed...
+installing into c:\ado\plus\...
+installation complete.
+
+{com}. outreg2 reg logmort age
+{txt}c:\ado\plus/o/outreg2.ado
+{err}must specify the full syntax (the last preference has expired)
+{txt}{search r(100):r(100);}
+
+{com}. outreg2 using test1.doc reg logmort age
+{err}invalid 'reg' 
+{txt}{search r(198):r(198);}
+
+{com}. outreg2 using test1.doc, reg logmort age
+{err}option {bf:reg} not allowed
+{txt}{search r(198):r(198);}
+
+{com}. reg logmort age
+
+      {txt}Source {c |}       SS       df       MS              Number of obs ={res}      36
+{txt}{hline 13}{char +}{hline 30}           F(  1,    34) ={res}  326.54
+    {txt}   Model {char |} {res} 26.9385303     1  26.9385303           {txt}Prob > F      = {res} 0.0000
+    {txt}Residual {char |} {res} 2.80485194    34  .082495645           {txt}R-squared     = {res} 0.9057
+{txt}{hline 13}{char +}{hline 30}           Adj R-squared = {res} 0.9029
+    {txt}   Total {char |} {res} 29.7433822    35  .849810921           {txt}Root MSE      = {res} .28722
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}     logmort{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}age {c |}{col 14}{res}{space 2} .0832706{col 26}{space 2} .0046081{col 37}{space 1}   18.07{col 46}{space 3}0.000{col 54}{space 4} .0739058{col 67}{space 3} .0926353
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -8.13845{col 26}{space 2} .3192627{col 37}{space 1}  -25.49{col 46}{space 3}0.000{col 54}{space 4} -8.78727{col 67}{space 3} -7.48963
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+{com}. outreg2 using test1.doc
+{txt}{stata `"shellout using `"test1.doc"'"':test1.doc}
+{browse `"C:\EconProject"' :dir}{com} : {txt}{stata `"seeout using "test1.txt""':seeout}
+
+{com}. shellout using `"test1.doc"'
+
+. save "C:\EconProject\econdata.dta"
+{txt}file C:\EconProject\econdata.dta saved
+
+{com}. exit

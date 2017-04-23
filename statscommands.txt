@@ -1,0 +1,92 @@
+Useful stata commands
+
+Plot mean vs data to check for Heterogeneity
+ bysort agecat: egen mortrate_mean = mean(mortrate)
+ twoway scatter mortrate agecat, msymbol(circle_hollow) || connected mortrate_mean agecat, msymbol(diamond)
+
+Gen a log series
+gen logmortrate_mean = log(mortrate_mean)
+ 
+Simple pooled OLS regression and plot it
+regress logmortrate smokerate
+twoway scatter logmortrate smokerate, mlabel(agecat) || lfit logmortrate smokerate , clstyle(p2)
+
+Do FE regression using least squares dummy variable model (LSDV)
+ xi: regress logmortrate smokerate i.agecat
+ 
+
+Do RE model
+xtreg logmortrate smokerate, re
+
+Do Hausman
+xtreg logmortrate smokerate, fe
+estimates store fixed
+xtreg logmortrate smokerate, re
+estimates store random
+hausman fixed random
+
+Testing for time fixed effects
+xtreg logmortrate smokerate i.wave, fe
+testparm i.wave
+
+If prob > 0.05, reject H0 that all years are jointly zero so need to use time fixed effects
+
+Breusch and Pagan Lagrangian Mult test for random effects
+xtreg y x1, re
+xttest0
+If < 0.05 random effects is appropriate
+
+Testing for cS dependence/contemporaneous correlation
+Breusch Pagan LM test for independence
+xtreg y x1, fe
+xttest2
+
+if pr > 0.05 no cS depence
+
+using Pasaran CD tet
+xtreg y x1, fe
+xtcsd, peasaran abs
+
+if pr > 0.05 no cS depence
+
+Test for hetero
+ssc install xtest3
+xttest3
+Pro < 0.05 = hetereo
+
+Tet for serial correlation
+ssc install xtserial
+xtserial y x1
+
+Pro < 0.05 = no serial correlation
+
+Test for unit root/stationarity
+xtunitroot
+
+Trying to just do a regression
+regress y x, robust
+not sure if robust is needed or not
+
+Store as var the fitted vals
+predict yhat
+
+anal of residuals
+We are assuming the variance of the residuals is homoskedastic or constant
+plot them
+rvfplot, yline(0)
+
+Residuals seem to be slightly narrower at higher values 
+
+run 
+
+
+
+
+
+
+
+
+
+
+
+

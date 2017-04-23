@@ -1,0 +1,56 @@
+Section A: Demographics, Identifiers, and Weights  28 
+Wave Status: Interview Status   
+Wave Variable      Label                                                         Type 
+ 
+  1  R1IWSTAT      r1iwstat:w1 r interview status                                Categ 
+  2  R2IWSTAT      r2iwstat:w2 r interview status                                Categ 
+  3  R3IWSTAT      r3iwstat:w3 r interview status                                Categ 
+  4  R4IWSTAT      r4iwstat:w4 r interview status                                Categ 
+  5  R5IWSTAT      r5iwstat:w5 r interview status                                Categ 
+  6  R6IWSTAT      r6iwstat:w6 r interview status                                Categ 
+ 
+  1  S1IWSTAT      s1iwstat:w1 s interview status                                Categ 
+  2  S2IWSTAT      s2iwstat:w2 s interview status                                Categ 
+  3  S3IWSTAT      s3iwstat:w3 s interview status                                Categ 
+  4  S4IWSTAT      s4iwstat:w4 s interview status                                Categ 
+  5  S5IWSTAT      s5iwstat:w5 s interview status                                Categ 
+  6  S6IWSTAT      s6iwstat:w6 s interview status                                Categ 
+ 
+Descriptive Statistics  
+Variable          N          Mean        Std Dev      Minimum       Maximum 
+ 
+R1IWSTAT      12341          1.06          0.44          1.00          9.00 
+R2IWSTAT      12034          2.41          3.00          0.00          9.00 
+R3IWSTAT      13083          2.32          2.98          0.00          9.00 
+R4IWSTAT      15288          2.54          3.16          0.00          9.00 
+R5IWSTAT      14711          2.41          3.11          0.00          9.00 
+R6IWSTAT      10601          1.00          0.00          1.00          1.00 
+ 
+S1IWSTAT       8070          1.00          0.00          1.00          1.00 
+S2IWSTAT       6178          1.00          0.00          1.00          1.00 
+S3IWSTAT       6386          1.00          0.00          1.00          1.00 
+S4IWSTAT       7402          1.00          0.00          1.00          1.00 
+S5IWSTAT       6964          1.00          0.00          1.00          1.00 
+S6IWSTAT       7242          1.00          0.00          1.00          1.00 
+ 
+Categorical Variable Codes  
+Value-------------------------|    R1IWSTAT    R2IWSTAT    R3IWSTAT    R4IWSTAT    R5IWSTAT    R6IWSTAT       
+0.inap.                       |                     245         809         934        1368                   
+1.resp, alive                 |       12099        9432        9772       11050       10274       10601       
+4.nr, alive                   |         237         201         163         178         473                   
+5.nr, died this wv            |                     168         275         279           1                   
+6.nr, died prev wv            |                                               1                               
+7.nr, dropped from samp       |                                   1                      10                   
+9.nr, dk if alive or died     |           5        1988        2063        2846        2585                   
+ 
+Value-------------------------|    S1IWSTAT    S2IWSTAT    S3IWSTAT    S4IWSTAT    S5IWSTAT    S6IWSTAT       
+.u:unmar                      |        3561        2671        2708        2932        2742        2802       
+.v:sp nr                      |         468         583         677         716         568         557       
+1.resp, alive                 |        8070        6178        6386        7402        6964        7242       
+ 
+How Constructed  
+RwIWSTAT variable gives the response and mortality status of the respondent at each wave. Respondents are 
+identified by code 1, while non-respondents are identified by codes 4-7, and 9. 
+ 
+Mortality status is derived from individual wave specific outcomes in the ELSA Index File.  Similar to 
+the RAND HRS, non-response code 4 means that the respondent is alive so far as we know but did not 

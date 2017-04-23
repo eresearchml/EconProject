@@ -1,0 +1,12 @@
+	(1)
+VARIABLES	logmort
+	
+age	0.0833***
+	(0.00461)
+Constant	-8.138***
+	(0.319)
+	
+Observations	36
+R-squared	0.906
+Standard errors in parentheses	
+*** p<0.01, ** p<0.05, * p<0.1	
