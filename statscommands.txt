@@ -12,21 +12,21 @@ regress logmortrate smokerate
 twoway scatter logmortrate smokerate, mlabel(agecat) || lfit logmortrate smokerate , clstyle(p2)
 
 Do FE regression using least squares dummy variable model (LSDV)
- xi: regress logmortrate smokerate i.agecat
+ xi: regress logmortrate logsmokerate logwealth trend i.agecat
  
 
 Do RE model
-xtreg logmortrate smokerate, re
+xtreg logmortrate logsmokerate logwealth trend, re
 
 Do Hausman
-xtreg logmortrate smokerate, fe
+xtreg logmortrate logsmokerate logwealth trend, fe
 estimates store fixed
-xtreg logmortrate smokerate, re
+xtreg logmortrate logsmokerate logwealth trend, re
 estimates store random
 hausman fixed random
 
 Testing for time fixed effects
-xtreg logmortrate smokerate i.wave, fe
+xtreg logmortrate logsmokerate logwealth trend i.wave, fe
 testparm i.wave
 
 If prob > 0.05, reject H0 that all years are jointly zero so need to use time fixed effects

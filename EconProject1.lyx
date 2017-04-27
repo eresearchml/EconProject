@@ -194,7 +194,157 @@ link to literature,
 \end_layout
 
 \begin_layout Subsection
-setup model & hypothesis, 
+setup model & hypothesis
+\end_layout
+
+\begin_layout Standard
+Forming the equation to test.
+ We have unobserved heterogeneity.
+ 
+\begin_inset Formula $Cov(X_{it},u_{it})\neq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Time dummy
+\end_layout
+
+\begin_layout Standard
+As we know mortality increases with age, we want to include a time dummy
+ to capture this broad trend in the data so we include 
+\begin_inset Formula $\lambda t$
+\end_inset
+
+ component in the equation
+\end_layout
+
+\begin_layout Subsubsection
+using log mortality
+\end_layout
+
+\begin_layout Standard
+We know log mortality increases linearly with time so 
+\begin_inset Formula $\lambda t$
+\end_inset
+
+ is appropriate.
+ Dependent variable is set up above.
+ 
+\end_layout
+
+\begin_layout Standard
+idiosyncratic factors 
+\begin_inset Formula $u_{it}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so that each subgroup (i) can vary we include the dummy variables 
+\begin_inset Formula $\mu_{1}d_{2}+\mu_{2}d_{3}$
+\end_inset
+
+where 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $d_{2}=\begin{cases}
+1 & ,i=2\\
+0 & ,otherwise
+\end{cases}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+time independent factors 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+- not included as this is replace with dummy variables but we may include
+ an intercept in the equation
+\end_layout
+
+\begin_layout Standard
+Dummy variable estimation is consistent under these criteria 
+\begin_inset Formula $\hat{\beta}_{dv}\rightarrow\beta$
+\end_inset
+
+, weak exogeneity 
+\begin_inset Formula $Cov(X_{it},u_{it})=0$
+\end_inset
+
+, No serial correlatino of errors, and homoscedasticity 
+\end_layout
+
+\begin_layout Standard
+dummy variable estimation and Fixed effects are equivalent
+\end_layout
+
+\begin_layout Standard
+FE removes time constant variables so any group specific factors that are
+ constant over time are not measured.
+ So from our intuition we think that FE does not do enough to cover what
+ we are trying to estimate.
+ 
+\end_layout
+
+\begin_layout Standard
+Random effects assumes 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $Cov(X_{it},\alpha_{it})=0$
+\end_inset
+
+, FE does not.
+ We test this with the Hausman test 
+\begin_inset Formula $H_{0}:Cov(X_{it},\alpha_{it})=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+independent variables
+\end_layout
+
+\begin_layout Standard
+The basic fixed effects model is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Y_{it}=\beta_{0}+\beta_{1}Wealth_{it}+\beta_{2}SmokeRate_{it}+\stackrel[j=2]{n}{\sum}\mu_{j}d_{j}+\stackrel[j=2]{n}{\sum}\lambda_{j}T_{j}+u_{it}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We include time dummies to account for the changes for every wave of the
+ survey.
 \end_layout
 
 \begin_layout Subsection
@@ -593,12 +743,68 @@ http://www.jblumenstock.com/files/courses/econ174/FEModels.pdf
 Results
 \end_layout
 
+\begin_layout Standard
+Regress using all data pooled OLS.
+\end_layout
+
+\begin_layout Standard
+Show correlation between smokerate, wealth and trend
+\end_layout
+
+\begin_layout Standard
+Initial regression
+\end_layout
+
 \begin_layout Subsection
 Big important results first
 \end_layout
 
+\begin_layout Standard
+The overall results suggest the increasing age of a group is strongly linked
+ with log mortality in the 50-90 year age range.
+ The smoking rate appears to be somewhat positively significant in predicting
+ the mortality rate.
+ Table ?? outlines the full set of results for the analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+Our fingings with regards to age are broadly inline with other studies for
+ the 50-90 year old age range.
+ The statistics from the CDC (ref?) back up the log linear trend from the
+ ages of 50-90.
+ Outside of the this range mortality follows a differnt path.
+ On balance our coefficients showed a slightly shallower (or steeper) relationsh
+ip which could be related to improved overall longevity which is still improving
+ (UK stats reduction mortality recently)
+\end_layout
+
+\begin_layout Standard
+The smoking rate proved somewhat significant, being rejected at the 95%
+ confidence level and accepted at the 90% confidence level.
+ The coefficient of smoking was around 3 times higher than age but we didn't
+ find the required level of confidence in this figure.
+ Whilst many studies have linked smoking to premature death (ref) very strongly
+ this was not borne out in our results.
+ The reported rate of smoking declines with age which most likely is due
+ to individuals quitting smoking as medical advice is prevalent that it
+ is in your best interests to do.
+ Whilst they do not currently smoke the extent of their smoking in the past
+ is not quantified and the effects may only manifest themselves in later
+ life.
+ 
+\end_layout
+
 \begin_layout Subsection
 Metntion briefly the results that proved insignificant
+\end_layout
+
+\begin_layout Standard
+In our results wealth was not a significant factor in predicting mortaltiy.
+ Wealth may not be such a strong influencer in a country with a national
+ health service or there is a certain level of wealth (poverty) below which
+ mortality is increased but abover which does not influence mortality.
+ 
 \end_layout
 
 \begin_layout Subsection
