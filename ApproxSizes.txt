@@ -1,0 +1,1 @@
+Total 85591	Introduction	3612	Literature 	20603	Data		21944	Methodology	12705	Results		10706	Conclusion	335Bibliography		290Mine Contents1 Introduction 22 Theory 33 Data 64 Statistical Model 75 Results 86 Conclusions 97 Apendicies 9
