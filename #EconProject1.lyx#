@@ -280,43 +280,7 @@ key "leecarter"
 \end_inset
 
 (other refs) with some of the simplest linking age plus other factors to
- log mortality.(citation for us ons data)
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Age vs logarithm of mortality
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename agevslnmort.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
+ log mortality.
  (show graph of log mort vs age) For our dataset we are examining individuals
  from ages of 50-85 over a 10year period.
  Our hypothesis is that it follows a log-linear path.
@@ -706,10 +670,16 @@ So we will concern ourselves with individuals who responded in the first
  When respondent die they can obviously no longer give responses to the
  questions in the data set.
  As the sample size is quite large we simply eliminate them from the group.
- As a result of this care should be used when interpreting the drop in smoking
- rate with age.
- Some of the drop is as a result of people giving up smoking and some is
- simply a result of smokers dying.
+ This could introduce biases if indeed a smoker dies this will in turn lead
+ to a drop in the smoking rate for the next wave.
+ 
+\end_layout
+
+\begin_layout Standard
+The areas of interest and questions have been modified slightly throughout
+ the lifecycle of the study.
+ We will be focusing on questions that have been asked in every wave and
+ who's question has not been modified significantly throughout time.
  
 \end_layout
 
@@ -718,7 +688,7 @@ As Wave 1 was the first full questionaaire we can only deal with mortality
  after Wave 1.
  So our time periods are mortality prior to Wave 2, 3, 4 and 5.
  Which gives us 4 time series points corresponding to 2005, 2007, 2009,
- 2011.
+ 2011 approximately.
  
 \end_layout
 
@@ -737,61 +707,8 @@ key "key-3"
 
 \end_inset
 
-This appears on visual inspection to possibly be true for our data also.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:ELSA-mortality-vs"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:ELSA-mortality-vs"
-
-\end_inset
-
-ELSA mortality vs age
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename agevslnmortELSAdata.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+This is borne out in our data also.
+ (Do the regression of age vs mortality rate)
 \end_layout
 
 \begin_layout Standard
@@ -805,7 +722,7 @@ In our analysis we also want to see what effects our independent variables
 \end_layout
 
 \begin_layout Subsection
-Describe the data in numbers and graphs (1 box plot?)
+Describe the data in numbers and graphs
 \end_layout
 
 \begin_layout Standard
@@ -4315,13 +4232,28 @@ that was based on data up until wave 3 that found there were marked differences
 TODO: describe the tables a bit more and pick out some interesting parts
 \end_layout
 
-\begin_layout Standard
-TODO: a box plot, maybe showing mort trends over the 4 cycles? mortboxplot
- and smokeboxplot
+\begin_layout Subsection
+Basic properties, graph, trends, cycles and other
 \end_layout
 
 \begin_layout Subsection
-Basic properties, graph, trends, cycles and other
+Cycle of people more likely to die in december, if we have this data?
+\end_layout
+
+\begin_layout Standard
+There tends to be a higher likelihood for people to die in december.
+ This is quite a strong seasonal cycle.
+ Even though the Uk is a temporate climate, poverty and ill health can lead
+ to people not being able to heat their homes adequately in the winter which
+ may lead to this spike.
+ There's some evidence (find some evidence) that the winter fuel allowance
+ should be increased to help alleviate this problem.
+ But this is beyond the scope of this analysis.
+ 
+\end_layout
+
+\begin_layout Standard
+Include graph of seasonal deaths since wave 1
 \end_layout
 
 \begin_layout Section
