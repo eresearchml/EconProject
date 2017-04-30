@@ -76,5 +76,119 @@ The economic data they collected includes ( House hold income, Wealth, Pension,
 ) 
 \end_layout
 
+\begin_layout Standard
+Do these factors still Our dataset concerns individuals in later life
+\end_layout
+
+\begin_layout Standard
+percieved unhealthy behavious such as smoking, tv watching and alcohol consumpti
+on are believed to be positively correlated with mortality.
+ Likewise percieved positive behaviours such as 
+\end_layout
+
+\begin_layout Standard
+I'd like to see what kind of socio economic effects are heavily linked with
+ mortality.
+ I think things such as income, savings, smoker status, social class, tv
+ watching, alcohol, physical activity are related to mortality.
+ My hypothesis is that per6ceived unhealthy behaviours such as tv watching,
+ smoking, alcohol will be positively correlated with mortality and percieved
+ positive behaviours such as physical activity, income, savings and social
+ class will the negatively correlated with mortality.
+ Such things as age and sex are already widely regarded as being negatively
+ correlated with mortality and regards sex, women living longer than men
+ so I'm trying to dig deeper than that for this project.
+ 
+\end_layout
+
+\begin_layout Standard
+Rference for introduction : http://www.macs.hw.ac.uk/~iain/research/Currie.SM.pdf
+\end_layout
+
+\begin_layout Standard
+This paper investigated what socio economic effects are linked with mortality.
+ 
+\end_layout
+
+\begin_layout Standard
+There has been a vast amount of research into the link between smoking and
+ premature death.
+ This survey also wants to see what life was like for individuals before
+ their deaths.
+ So a lot of the health data is concerned with how good the quality of life
+ is for people prior to their death.
+ This includes living with certain conditions, how ability to walk, wash
+ and clothe oneself impacts of mortality.
+ And how mental health affects.
+\end_layout
+
+\begin_layout Standard
+Health sections include, general health, Health behaviours (smoking), mental
+ health, Mobility assement, blood analys, cognitive fucntions
+\end_layout
+
+\begin_layout Standard
+Also included was psychosocial (tv watching etc) included in the study.
+\end_layout
+
+\begin_layout Standard
+The information collected provides data about, household and individual
+ demographics, Health pyhsical and psychosocial, work and pensions, income
+ and assets, housing, cognitive function, social participation, effor and
+ reward(voluntary work and caring), Expectations and walking speed.
+ 
+\end_layout
+
+\begin_layout Standard
+Ommitted variable bias.
+ 
+\end_layout
+
+\begin_layout Standard
+Taken from a paper so reword
+\begin_inset Quotes erd
+\end_inset
+
+An application I will walk you through many applications of fixed effect
+ models.
+ Here is one to ponder.
+ There have recently been high profile studies of the relationship between
+ staffing in hospitals and patient outcomes.
+ These studies use traditional OLS regression where the unit of observation
+ is the patient, the dependent variable is some outcome measure like mortality
+ (a dummy variable that equals 1 if the patient died in the hospital) and
+ the key predictor is staffing (e.g., nurses per patient).
+ These studies do not use fixed effects, and invariably show that hospitals
+ with more staff have better patient outcomes.
+ These results have had enormous policy implications.
+ Unfortunately, these studies may suffer from omitted variable bias.
+ For example, the key unobservable variable might be the severity of patients’
+ illnesses, which is notoriously difficult to control for with available
+ data.
+ Severity is likely to be correlated with both mortality and staffing, so
+ that the coefficient on staffing will be biased.
+ (What is the direction of the bias?) If you ran a hospital fixed-effects
+ model, you would include hospital dummies in the regression that would
+ control for observable and unobservable differences in severity (and all
+ other factors) across hospitals.
+ This would greatly reduce potential omitted variable bias.
+ None of the current research in this field has done so, perhaps because
+ there is not enough intrahospital variation in staffing to allow for fixed-effe
+cts estimation.
+ Even a fixed effects model would not completely eliminate potential omitted
+ variable bias.
+ You must also hope that any changes over time in unobservable patient severity
+ within each hospital are uncorrelated with changes over time in staffing.
+ This might not be such a good assumption.
+ As hospitals experience increases in severity, they may increase staffing.
+ If so, then unobservable severity within a hospital is correlated with
+ staffing and the omitted variable bias is still present.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
