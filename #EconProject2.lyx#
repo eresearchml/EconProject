@@ -98,7 +98,7 @@ Computer Programs used: Stata13, Latex, Python and Excel
 \end_layout
 
 \begin_layout Standard
-Word Count: 4717
+Word Count:
 \end_layout
 
 \begin_layout Abstract
@@ -615,14 +615,7 @@ As the data in the ELSA study follows the same people over multiple years
  directly manipulated or tested.
  So by using random effects model we are looking at both the within group
  data and other groups.
- In addition it is more extendable for future study 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "maybeuseful"
-
-\end_inset
-
-.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4832,7 +4825,7 @@ The smoking rate proved somewhat significant, being rejected at the 95%
  Whilst many studies have linked smoking to premature death 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "smokindeath"
+key "key-35"
 
 \end_inset
 
@@ -6189,7 +6182,7 @@ Gallop A (2006), Mortality improvements and evolution of life expectancies
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "feandre"
+key "maybeuseful"
 
 \end_inset
 

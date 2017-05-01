@@ -190,5 +190,158 @@ cts estimation.
 
 \end_layout
 
+\begin_layout Subsection
+OLS but justify choice of estimator
+\end_layout
+
+\begin_layout Standard
+talk about ommitted variable bias
+\end_layout
+
+\begin_layout Standard
+Identifying assumption: Unobservable factors that might simultaneously affect
+ the LHS and RHS of the regression are time-invariant.
+ 
+\end_layout
+
+\begin_layout Standard
+The theory behind fixed effects regression
+\end_layout
+
+\begin_layout Standard
+If we believe the regression has the same shape within each of these groups
+ over time, we can estimate the average of the regressions.
+ The way fixed effects regressions handle this is to calculate the changes
+ wrt to the mean of those changes within the group.
+ So we want to know whether variations in mortality are related to variations
+ in our effects.
+ 
+\end_layout
+
+\begin_layout Standard
+We are trying to estimate coefficients of regression for a number of factors
+ (listed above) but across a wide range of different groups.
+ To eliminate some of these differences between the groups 
+\end_layout
+
+\begin_layout Standard
+Need to include dummy for each wave (ts component) and each group (so they
+ can differ)
+\end_layout
+
+\begin_layout Standard
+need to include trend component
+\end_layout
+
+\begin_layout Standard
+Stata will automatically create dummies 
+\end_layout
+
+\begin_layout Standard
+This is known as fixed effects regression becuase it holds constant (fixes)
+ the average effects of each group.
+\end_layout
+
+\begin_layout Subsubsection
+Variation
+\end_layout
+
+\begin_layout Standard
+Between variation B = EE(xi_hat - x_hat)^2: How does an individual vary
+ from sample mean?
+\end_layout
+
+\begin_layout Standard
+Within variation W = EE(xij - xi_hat)^2: How does an individual vary in
+ time from it's group mean?
+\end_layout
+
+\begin_layout Subsubsection
+using log mortality
+\end_layout
+
+\begin_layout Standard
+Dummy variable estimation is consistent under these criteria 
+\begin_inset Formula $\hat{\beta}_{dv}\rightarrow\beta$
+\end_inset
+
+, weak exogeneity 
+\begin_inset Formula $Cov(X_{it},u_{i})=0$
+\end_inset
+
+, No serial correlatino of errors, and homoscedasticity 
+\end_layout
+
+\begin_layout Standard
+FE removes time constant variables so any group specific factors that are
+ constant over time are not measured.
+ So from our intuition we think that FE does not do enough to cover what
+ we are trying to estimate.
+ 
+\end_layout
+
+\begin_layout Standard
+Random effects assumes 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $Cov(X_{it},u_{i})=0$
+\end_inset
+
+, FE does not.
+ We test this with the Hausman test 
+\begin_inset Formula $H_{0}:Cov(X_{it},u_{i})=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and fixed effects model of the form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $y_{it}=\beta_{0}+\beta_{1}A{}_{it}+\beta_{2}w_{it}+\beta_{3}s_{it}+\stackrel[j=2]{n}{\sum}\lambda_{j}T_{j}+\varepsilon_{it}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Groups
+\end_layout
+
+\begin_layout Standard
+Whilst the panel data asks a very broad range of questions it can never
+ fully capture the variability between individuals either through variable
+ being outside of the scope or inadequacies in the estimation procedure.
+ We also suffer from only having 5 time data points to compare our sample
+ over.
+ 
+\end_layout
+
+\begin_layout Standard
+Smoking
+\end_layout
+
+\begin_layout Standard
+In our analysis we also want to see what effects our independent variables
+ have on the log or mortality rate.
+ So throughout our dependent variable will be log mortality.
+ For example if something such as smoking would increase your probability
+ of death in the next year then it follows that we should be regressing
+ this against the log mortality rate.
+ 
+\end_layout
+
 \end_body
 \end_document

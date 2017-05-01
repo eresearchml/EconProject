@@ -316,5 +316,66 @@ and fixed effects model of the form:
 
 \end_layout
 
+\begin_layout Subsection
+Groups
+\end_layout
+
+\begin_layout Standard
+Whilst the panel data asks a very broad range of questions it can never
+ fully capture the variability between individuals either through variable
+ being outside of the scope or inadequacies in the estimation procedure.
+ We also suffer from only having 5 time data points to compare our sample
+ over.
+ 
+\end_layout
+
+\begin_layout Standard
+Smoking
+\end_layout
+
+\begin_layout Standard
+In our analysis we also want to see what effects our independent variables
+ have on the log or mortality rate.
+ So throughout our dependent variable will be log mortality.
+ For example if something such as smoking would increase your probability
+ of death in the next year then it follows that we should be regressing
+ this against the log mortality rate.
+ 
+\end_layout
+
+\begin_layout Subsection
+Stat model
+\end_layout
+
+\begin_layout Standard
+If we do not find that the data violates the assumptions we aim to run a
+ random effects estimation on the data.
+ Fixed effects models they throw away information(?) and pooled OLS is inefficie
+nt because it does not exploit the autocorrelation in the composite error
+ term(?).
+ In further work we would like to add in time invariant factors into the
+ prediction of mortality as number of interesting questions in the ELSA
+ are time invariant.
+ Random Effects relies on 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $Cov(X_{it},u_{it})=0$
+\end_inset
+
+, which can be verified by the Hausmann test.
+ Hausman is only valid under homoscedasticity.
+ (homoscedasticity - constant variance across the set)
+\end_layout
+
 \end_body
 \end_document
